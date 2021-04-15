@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AFG App</string>
+    <string name="Iam">I am...</string>
+
+    //page 1 Home
+    <string name="LookingForShelter">Looking for a shelter</string>
+    <string name="FacilityOwner">A facility or resource owner</string>
+
+    //page 2 search
+    <string name="SearchFor">Search For Facilities</string>
+    <string name="SearchTitle">enter a location or zip code</string>
+
+    //page 8 Shelter POV
+    <string name="UpdateInfo">Update Info</string>
+    <string name="Browse">Browse</string>
+
+</resources>
