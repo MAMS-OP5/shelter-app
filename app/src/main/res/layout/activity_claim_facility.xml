@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:width="350sp"
-        android:height="40sp"
+        android:height="50sp"
         android:background="#034687"
         android:gravity="center"
         android:text="@string/ClaimFac"

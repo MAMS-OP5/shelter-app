@@ -18,18 +18,23 @@ public class MainActivity extends AppCompatActivity {
         Button lookShelter = (Button) findViewById(R.id.LookForShelterButton);
 
         lookShelter.setOnClickListener(new OnClickListener(){
+            @Override
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, Search.class));
+                Intent intent = new Intent(MainActivity.this,Search.class);
+                startActivity(intent);
             }
         });
 
-        Button amShelter = (Button) findViewById(R.id.FacilityOwnerButton);
+        Button haveShelter = (Button) findViewById(R.id.FacilityOwnerButton);
 
-        amShelter.setOnClickListener(new OnClickListener(){
+        haveShelter.setOnClickListener(new OnClickListener(){
+            @Override
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, ClaimFacility.class));
+                Intent intent = new Intent(MainActivity.this,ClaimFacility.class);
+                startActivity(intent);
             }
         });
+
+        }
     }
 
-}

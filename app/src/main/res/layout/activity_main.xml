@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:width="350sp"
         android:height="80sp"
+        android:clickable="true"
         android:text="@string/FacilityOwner"
         android:textSize="18sp"
         app:backgroundTint="#034687"
