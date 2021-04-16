@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "335254833505",
+    "project_id": "afg-op5",
+    "storage_bucket": "afg-op5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335254833505:android:ea4c0d50222b5ec67cdd20",
+        "android_client_info": {
+          "package_name": "com.example.afgapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335254833505-kcevdsj3u1idmgvd2p09h8rm0p6qla61.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuoJHOzh4CEYL6ZHjMZ2XJWSXGVWXg2Hc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335254833505-kcevdsj3u1idmgvd2p09h8rm0p6qla61.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

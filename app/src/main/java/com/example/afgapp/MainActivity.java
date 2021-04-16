@@ -19,7 +19,15 @@ public class MainActivity extends AppCompatActivity {
 
         lookShelter.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, ShelterPov.class));
+                startActivity(new Intent(MainActivity.this, Search.class));
+            }
+        });
+
+        Button amShelter = (Button) findViewById(R.id.FacilityOwnerButton);
+
+        amShelter.setOnClickListener(new OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, ClaimFacility.class));
             }
         });
     }

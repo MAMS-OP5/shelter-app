@@ -17,35 +17,28 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/shelterImage"
-        android:layout_width="378dp"
-        android:layout_height="654dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="-132dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
     <TextView
         android:id="@+id/shelterName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:width="350sp"
         android:height="35sp"
         android:background="#034687"
-        android:text="TextView"
+        android:gravity="center"
+        android:text="Placeholder"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="331dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:width="375sp"
         android:height="350sp"
         android:background="#FFFFFF"
@@ -53,26 +46,43 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/UpdateInfoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
         android:text="@string/UpdateInfo"
         app:backgroundTint="#318ED4"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="665dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextMultiLine2"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:text="@string/Browse"
         app:backgroundTint="#318ED4"
-        app:layout_constraintBaseline_toBaselineOf="@+id/UpdateInfoButton"
-        tools:layout_editor_absoluteX="255dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextMultiLine2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/UpdateInfoButton" />
+
+    <ImageView
+        android:id="@+id/shelterImage"
+        android:layout_width="375dp"
+        android:layout_height="250dp"
+        android:background="@drawable/shelter_image"
+        app:layout_constraintBottom_toTopOf="@+id/shelterName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

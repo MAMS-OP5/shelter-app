@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">AFG App</string>
     <string name="Iam">I am...</string>
 
@@ -9,9 +9,29 @@
     //page 2 search
     <string name="SearchFor">Search For Facilities</string>
     <string name="SearchTitle">enter a location or zip code</string>
+    <string name="SearchLabel">Search Bar</string>
+
+    //page 6 Claim Facility
+    <string name="ClaimFac">Claim Facility</string>
+    <string name="instructionsStr">If you are the owner of a facility and would like to update the faci information, provide a business email below to confirm your facility ownership.</string>
+    <string name="pleaseProvide">Please provide your facilitys email:</string>
+    <string name="initialEmailPrompt">Enter Email</string>
+    <string name="subButton">Submit</string>
+    <string name="haveFacilityButton">I already claimed my facility (Login)</string>
+
+    //page 7 Login defined with imported login activity template
 
     //page 8 Shelter POV
     <string name="UpdateInfo">Update Info</string>
     <string name="Browse">Browse</string>
+    <string name="title_activity_login">Login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_login">Login</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 
 </resources>
