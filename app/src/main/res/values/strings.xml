@@ -37,5 +37,14 @@
     //xml searchable
     <string name="app_label">Shelter Name</string>
     <string name="search_hint">Search by Location or Zip Code</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="registerLabelStr">Create Account</string>
+    <string name="facilityNameHintStr">Facility Name</string>
+    <string name="enterEmailHintStr">Facility Email</string>
+    <string name="EnterPasswordHintStr">Password</string>
+    <string name="ConfirmPasswordStr">Confirm Password</string>
+    <string name="CreateAccButtonStr"> Create</string>
+    <string name="LoginLabelStr"> Login </string>
+    />
 
 </resources>
