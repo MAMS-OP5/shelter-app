@@ -23,7 +23,7 @@ public class Search extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        Button lookShelter = (Button) findViewById(R.id.submitSearch);
+        Button lookShelter = findViewById(R.id.searchLabel);
 
         lookShelter.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){

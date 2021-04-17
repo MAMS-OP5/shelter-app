@@ -34,4 +34,8 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+    //xml searchable
+    <string name="app_label">Shelter Name</string>
+    <string name="search_hint">Search by Location or Zip Code</string>
+
 </resources>
