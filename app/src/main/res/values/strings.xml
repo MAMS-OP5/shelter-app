@@ -14,7 +14,7 @@
     //page 6 Claim Facility
     <string name="ClaimFac">Claim Facility</string>
     <string name="instructionsStr">If you are the owner of a facility and would like to update the faci information, provide a business email below to confirm your facility ownership.</string>
-    <string name="pleaseProvide">Please provide your facilitys email:</string>
+    <string name="pleaseProvide">Please provide your facility \' s email:</string>
     <string name="initialEmailPrompt">Enter Email</string>
     <string name="subButton">Submit</string>
     <string name="haveFacilityButton">I already claimed my facility (Login)</string>
@@ -42,9 +42,12 @@
     <string name="facilityNameHintStr">Facility Name</string>
     <string name="enterEmailHintStr">Facility Email</string>
     <string name="EnterPasswordHintStr">Password</string>
-    <string name="ConfirmPasswordStr">Confirm Password</string>
+    <string name="PhoneNumStr">Facility Phone Number</string>
     <string name="CreateAccButtonStr"> Create</string>
     <string name="LoginLabelStr"> Login </string>
+    <string name="loginButtonStr">Login</string>
+    <string name="loginBtn">Or Login Here</string>
+    <string name="backBtnStr">Back</string>
     />
 
 </resources>

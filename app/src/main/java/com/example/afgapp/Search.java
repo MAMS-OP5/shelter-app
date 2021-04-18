@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class Search extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        Button lookShelter = findViewById(R.id.searchLabel);
+        TextView lookShelter = findViewById(R.id.searchLabel);
 
         lookShelter.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
