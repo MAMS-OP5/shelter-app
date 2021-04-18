@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,11 +34,11 @@ public class Register extends AppCompatActivity {
         fEmail = findViewById(R.id.enterEmail);
         fPassword = findViewById(R.id.enterPassword2);
         fPhoneNum = findViewById((R.id.enterPhone));
-        fRegisterBtn = findViewById(R.id.registerSubmitButton);
+        fRegisterBtn = findViewById(R.id.registerBtn);
         fLoginBtn = findViewById(R.id.createText);
 
         fAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.registerProgressBar);
+        progressBar = findViewById(R.id.progressBar);
 
         backBtn = findViewById(R.id.backBtn);
 
@@ -85,10 +84,18 @@ public class Register extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), ShelterPov.class));
                         }else {
                             Toast.makeText(Register.this, "Error " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
              }
+        });
+
+        fLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Login.class));
+            }
         });
     }
 }

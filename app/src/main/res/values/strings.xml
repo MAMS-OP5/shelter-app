@@ -37,6 +37,8 @@
     //xml searchable
     <string name="app_label">Shelter Name</string>
     <string name="search_hint">Search by Location or Zip Code</string>
+
+    //Register
     <string name="action_sign_in">Sign in or register</string>
     <string name="registerLabelStr">Create Account</string>
     <string name="facilityNameHintStr">Facility Name</string>
@@ -48,6 +50,8 @@
     <string name="loginButtonStr">Login</string>
     <string name="loginBtn">Or Login Here</string>
     <string name="backBtnStr">Back</string>
+    <string name="logoutBtnStr">Logout</string>
+    <string name="newHereToReg">Or Sign Up</string>
     />
 
 </resources>

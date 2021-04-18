@@ -16,15 +16,19 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
-        android:id="@+id/backBtn"
+        android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
         android:background="#034687"
-        android:text="@string/backBtnStr"
-        app:backgroundTint="#034687" />
+        android:text="@string/logoutBtnStr"
+        app:backgroundTint="#034687"
+        app:layout_constraintBottom_toBottomOf="@+id/navBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/navBar"
+        android:onClick="logout"/>
+
     <TextView
         android:id="@+id/shelterName"
         android:layout_width="wrap_content"
