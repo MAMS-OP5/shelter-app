@@ -18,73 +18,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/logoutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#034687"
+        android:onClick="logout"
         android:text="@string/logoutBtnStr"
         app:backgroundTint="#034687"
         app:layout_constraintBottom_toBottomOf="@+id/navBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/navBar"
-        android:onClick="logout"/>
-
-    <TextView
-        android:id="@+id/shelterName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:width="350sp"
-        android:height="35sp"
-        android:background="#034687"
-        android:gravity="center"
-        android:text="Placeholder"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextMultiLine2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:width="375sp"
-        android:height="350sp"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/UpdateInfoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:text="@string/UpdateInfo"
-        app:backgroundTint="#318ED4"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextMultiLine2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="@string/Browse"
-        app:backgroundTint="#318ED4"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextMultiLine2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/UpdateInfoButton" />
+        app:layout_constraintTop_toTopOf="@+id/navBar" />
 
     <ImageView
         android:id="@+id/shelterImage"
@@ -96,5 +39,112 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navBar" />
+
+    <TextView
+        android:id="@+id/shelterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:width="350sp"
+        android:height="35sp"
+        android:background="#034687"
+        android:gravity="center"
+        android:text="Facility Name"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/shelterPovWhiteBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/shelterPovWhiteBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:width="375sp"
+        android:height="350sp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/shelterEmailDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Facility Email"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shelterName" />
+
+    <TextView
+        android:id="@+id/shelterPhoneDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Facility Phone Number"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/shelterPovWhiteBox"
+        app:layout_constraintStart_toStartOf="@+id/shelterPovWhiteBox"
+        app:layout_constraintTop_toBottomOf="@+id/shelterEmailDisplay" />
+
+    <TextView
+        android:id="@+id/shelterAddressDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Facility Address"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shelterPhoneDisplay" />
+
+    <TextView
+        android:id="@+id/shelterResourcesDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Facility Resources (and/or Vacancies)"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shelterAddressDisplay" />
+
+    <Button
+        android:id="@+id/shelterSideBrowse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/Browse"
+        app:backgroundTint="#318ED4"
+        app:layout_constraintBottom_toBottomOf="@+id/shelterPovWhiteBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/updateInfoButton" />
+
+    <Button
+        android:id="@+id/updateInfoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:text="@string/UpdateInfo"
+        app:backgroundTint="#318ED4"
+        app:layout_constraintBottom_toBottomOf="@+id/shelterPovWhiteBox"
+        app:layout_constraintEnd_toStartOf="@+id/shelterSideBrowse"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

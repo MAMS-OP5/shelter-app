@@ -13,9 +13,9 @@
 
     //page 6 Claim Facility
     <string name="ClaimFac">Claim Facility</string>
-    <string name="instructionsStr">If you are the owner of a facility and would like to update the faci information, provide a business email below to confirm your facility ownership.</string>
-    <string name="pleaseProvide">Please provide your facility \' s email:</string>
-    <string name="initialEmailPrompt">Enter Email</string>
+    <string name="instructionsStr">If you are the owner of a facility and would like to update the facility information, provide the ZIP code of your facility below and sign up for an account to confirm facility ownership.</string>
+    <string name="pleaseProvide">Please provide your facility ZIP code:</string>
+    <string name="initialZipPrompt">Enter ZIP code</string>
     <string name="subButton">Submit</string>
     <string name="haveFacilityButton">I already claimed my facility (Login)</string>
 
@@ -38,7 +38,7 @@
     <string name="app_label">Shelter Name</string>
     <string name="search_hint">Search by Location or Zip Code</string>
 
-    //Register
+    //Register and Login
     <string name="action_sign_in">Sign in or register</string>
     <string name="registerLabelStr">Create Account</string>
     <string name="facilityNameHintStr">Facility Name</string>
@@ -52,6 +52,7 @@
     <string name="backBtnStr">Back</string>
     <string name="logoutBtnStr">Logout</string>
     <string name="newHereToReg">Or Sign Up</string>
+    <string name="forgotPassStr">Forgot Password?</string>
     />
 
 </resources>

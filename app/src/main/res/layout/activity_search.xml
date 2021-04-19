@@ -9,25 +9,27 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/navBar3"
-        android:layout_width="594dp"
+        android:layout_width="match_parent"
         android:layout_height="82dp"
         android:background="#034687"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="82dp"
-            android:layout_height="74dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/navBar3"
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="#034687"
+            android:text="@string/backBtnStr"
+            app:backgroundTint="#034687"
+            app:layout_constraintBottom_toBottomOf="@+id/navBar4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/back_arrow" />
+            app:layout_constraintTop_toTopOf="@+id/navBar4" />
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
@@ -39,7 +41,7 @@
         android:gravity="center"
         android:text="@string/SearchFor"
         android:textColor="#FFFFFF"
-        android:textSize="40sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
