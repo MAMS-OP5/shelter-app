@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:text="@string/Iam"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/LookForShelterButton"
+        app:layout_constraintBottom_toTopOf="@+id/lookForShelterButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
-        android:id="@+id/LookForShelterButton"
+        android:id="@+id/lookForShelterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="350sp"
@@ -39,14 +39,14 @@
         android:text="@string/LookingForShelter"
         android:textSize="18sp"
         app:backgroundTint="#034687"
-        app:layout_constraintBottom_toTopOf="@+id/FacilityOwnerButton"
+        app:layout_constraintBottom_toTopOf="@+id/amFacilityBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IAm" />
 
     <Button
-        android:id="@+id/FacilityOwnerButton"
+        android:id="@+id/amFacilityBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="350sp"
@@ -59,6 +59,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LookForShelterButton" />
+        app:layout_constraintTop_toBottomOf="@+id/lookForShelterButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
