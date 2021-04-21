@@ -37,6 +37,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="resendBtnStr">Resend Verification Link</string>
+    <string name="notVerified">Not Verified!</string>
 
     //xml searchable
     <string name="app_label">Shelter Name</string>
