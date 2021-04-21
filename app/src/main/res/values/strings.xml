@@ -44,6 +44,8 @@
     <string name="updateShelterInfo">Update Shelter Info</string>
     <string name="about">About</string>
     <string name="resources">Resources</string>
+    <string name="changePhoto">Change Photo</string>
+    <string name="submitUpdate">Submit Update</string>
 
     //xml searchable
     <string name="app_label">Shelter Name</string>
