@@ -11,6 +11,10 @@
     <string name="SearchTitle">enter a location or zip code</string>
     <string name="SearchLabel">Search Bar</string>
 
+    //page 5 View Shelter Info
+    <string name="shelterNameStr" tools:ignore="StringEscaping">John Smith Shelter</string>
+    <string name="claimThisFacilityStr">Claim this facility</string>
+
     //page 6 Claim Facility
     <string name="ClaimFac">Claim Facility</string>
     <string name="instructionsStr">If you are the owner of a facility and would like to update the facility information, provide the ZIP code of your facility below and sign up for an account to confirm facility ownership.</string>
@@ -53,6 +57,7 @@
     <string name="logoutBtnStr">Logout</string>
     <string name="newHereToReg">Or Sign Up</string>
     <string name="forgotPassStr">Forgot Password?</string>
+    <string name="todo">todo</string>
     />
 
 </resources>
