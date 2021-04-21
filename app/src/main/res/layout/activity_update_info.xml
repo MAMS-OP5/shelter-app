@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/updateConstraintLayout"
+    android:id="@+id/emailAddress"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/afg_bg"
@@ -17,5 +16,116 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shelterName"
+        android:layout_width="462dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#034687"
+        android:gravity="center"
+        android:text="@string/updateShelterInfo"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+
+    <TextView
+        android:id="@+id/aboutText"
+        android:layout_width="528dp"
+        android:layout_height="317dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shelterName"
+        tools:text="@string/about" />
+
+    <TextView
+        android:id="@+id/aboutShelter"
+        android:layout_width="447dp"
+        android:layout_height="362dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/resourcesText"
+        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
+        app:layout_constraintStart_toStartOf="@+id/resourcesText"
+        app:layout_constraintTop_toTopOf="@+id/resourcesText" />
+
+    <TextView
+        android:id="@+id/resourcesText"
+        android:layout_width="528dp"
+        android:layout_height="434dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:text="@string/resources"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toBottomOf="@+id/aboutText"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/phoneNumber"
+        android:layout_width="489dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toTopOf="@+id/aboutText" />
+
+    <TextView
+        android:id="@+id/shelterEmail"
+        android:layout_width="489dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="489dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toBottomOf="@+id/shelterEmail" />
+
+    <TextView
+        android:id="@+id/miscellaneous"
+        android:layout_width="489dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
