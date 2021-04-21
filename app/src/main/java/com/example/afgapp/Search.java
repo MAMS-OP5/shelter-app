@@ -18,17 +18,25 @@ import java.util.List;
 public class Search extends AppCompatActivity {
 
     ArrayAdapter<String> arrayAdapter;
-
+    Button backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        backBtn = findViewById(R.id.backBtn);
         TextView lookShelter = findViewById(R.id.searchLabel);
 
         lookShelter.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 startActivity(new Intent(Search.this, Results.class));
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
 
