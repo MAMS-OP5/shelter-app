@@ -33,12 +33,13 @@
         android:id="@+id/shelterImage"
         android:layout_width="375dp"
         android:layout_height="250dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/shelter_image"
         app:layout_constraintBottom_toTopOf="@+id/shelterName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+        app:layout_constraintTop_toBottomOf="@+id/verifyReminder" />
 
     <TextView
         android:id="@+id/shelterName"
@@ -104,7 +105,7 @@
         android:layout_marginTop="20dp"
         android:text="Facility Address"
         android:textSize="20sp"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,7 +118,7 @@
         android:layout_marginTop="20dp"
         android:text="Facility Resources (and/or Vacancies)"
         android:textSize="20sp"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,5 +147,32 @@
         app:layout_constraintEnd_toStartOf="@+id/shelterSideBrowse"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/verifyReminder"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#ECE398"
+        android:gravity="center_horizontal"
+        android:text="@string/notVerified"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/navBar"
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+
+    <Button
+        android:id="@+id/resendVerifyLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/resendBtnStr"
+        android:textColor="#000000"
+        android:visibility="visible"
+        app:backgroundTint="#C1ECE398"
+        app:layout_constraintBottom_toBottomOf="@+id/verifyReminder"
+        app:layout_constraintEnd_toStartOf="@+id/verifyReminder"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/verifyReminder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

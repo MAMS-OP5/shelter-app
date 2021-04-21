@@ -53,6 +53,8 @@
     <string name="logoutBtnStr">Logout</string>
     <string name="newHereToReg">Or Sign Up</string>
     <string name="forgotPassStr">Forgot Password?</string>
+    <string name="notVerified">Email Not Verified!</string>
+    <string name="resendBtnStr">Resend Verification Link</string>
     />
 
 </resources>
