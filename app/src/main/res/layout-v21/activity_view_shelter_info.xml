@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/afg_bg"
+    tools:context=".viewShelterInfo">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topBlueNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#034687"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shelterName"
+        android:layout_width="462dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="20dp"
+        android:background="#034687"
+        android:gravity="center"
+        android:text="@string/shelterNameStr"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBlueNavBar" />
+
+    <ImageView
+        android:id="@+id/shelterImage"
+        android:layout_width="541dp"
+        android:layout_height="196dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shelterName"
+        app:srcCompat="@drawable/shelter"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/shelterInfo"
+        android:layout_width="540dp"
+        android:layout_height="511dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shelterImage" />
+
+    <Button
+        android:id="@+id/claimThisFacility"
+        android:layout_width="436dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#318ED4"
+        android:text="@string/claimThisFacilityStr"
+        android:textAllCaps="false"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/shelterInfo"
+        app:layout_constraintEnd_toEndOf="@+id/shelterInfo"
+        app:layout_constraintStart_toStartOf="@+id/shelterInfo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
