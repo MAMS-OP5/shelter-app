@@ -32,7 +32,7 @@ public class Register extends AppCompatActivity {
     EditText fName, fEmail, fPassword, fPhoneNum;
     Button fRegisterBtn;
     TextView fLoginBtn;
-    Button backBtn;
+    Button backBtn, updateInfo, browse;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
     FirebaseFirestore fStore;
@@ -55,17 +55,21 @@ public class Register extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         backBtn = findViewById(R.id.backBtn);
+        updateInfo = findViewById(R.id.updateInfoButton);
+        browse = findViewById(R.id.shelterSideBrowse);
 
         if(fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), ShelterPov.class));
             finish();
         }
+
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
+
         fRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,6 +146,20 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), Login.class));
+            }
+        });
+
+        updateInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), UpdateInfo.class));
+            }
+        });
+
+        browse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Search.class));
             }
         });
     }
