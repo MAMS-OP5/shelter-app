@@ -11,12 +11,26 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/navBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="82dp"
         android:background="#034687"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="#034687"
+        android:text="@string/backBtnStr"
+        app:backgroundTint="#034687"
+        app:layout_constraintBottom_toBottomOf="@+id/navBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/navBar" />
     <TextView
         android:id="@+id/shelterName"
         android:layout_width="462dp"
@@ -53,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/shelterName"
         tools:text="@string/about" />
 
-    <TextView
+    <EditText
         android:id="@+id/shelterResources"
         android:layout_width="456dp"
         android:layout_height="250dp"
@@ -85,7 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/aboutText"
         app:layout_constraintVertical_bias="0.189" />
 
-    <TextView
+    <EditText
         android:id="@+id/phoneNumber"
         android:layout_width="489dp"
         android:layout_height="56dp"
@@ -95,7 +109,7 @@
         app:layout_constraintStart_toStartOf="@+id/aboutText"
         app:layout_constraintTop_toTopOf="@+id/aboutText" />
 
-    <TextView
+    <EditText
         android:id="@+id/shelterEmail"
         android:layout_width="489dp"
         android:layout_height="56dp"
@@ -105,7 +119,7 @@
         app:layout_constraintStart_toStartOf="@+id/aboutText"
         app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
 
-    <TextView
+    <EditText
         android:id="@+id/location"
         android:layout_width="489dp"
         android:layout_height="56dp"
@@ -115,7 +129,7 @@
         app:layout_constraintStart_toStartOf="@+id/aboutText"
         app:layout_constraintTop_toBottomOf="@+id/shelterEmail" />
 
-    <TextView
+    <EditText
         android:id="@+id/miscellaneous"
         android:layout_width="489dp"
         android:layout_height="56dp"
@@ -125,7 +139,7 @@
         app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <Button
-        android:id="@+id/submitButton"
+        android:id="@+id/changePhotoBtn"
         android:layout_width="249dp"
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
@@ -140,7 +154,7 @@
         app:layout_constraintTop_toBottomOf="@+id/shelterResources" />
 
     <Button
-        android:id="@+id/claimThisFacility"
+        android:id="@+id/submitUpdateBtn"
         android:layout_width="309dp"
         android:layout_height="59dp"
         android:layout_marginBottom="10dp"
