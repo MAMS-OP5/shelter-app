@@ -32,7 +32,7 @@ public class ShelterPov extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
-    Button resendCode;
+    Button resendCode, updateInfo, browse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,9 @@ public class ShelterPov extends AppCompatActivity {
 
         resendCode = findViewById(R.id.resendVerifyLink);
         verifyMsg = findViewById(R.id.verifyReminder);
+
+        updateInfo = findViewById(R.id.updateInfoButton);
+        browse = findViewById(R.id.shelterSideBrowse);
 
         userId = fAuth.getCurrentUser().getUid();
         final FirebaseUser user = fAuth.getCurrentUser();
@@ -79,6 +82,19 @@ public class ShelterPov extends AppCompatActivity {
                 phone.setText(documentSnapshot.getString("phone"));
                 name.setText(documentSnapshot.getString("fName"));
                 email.setText(documentSnapshot.getString("email"));
+            }
+        });
+        updateInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), UpdateInfo.class));
+            }
+        });
+
+        browse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Search.class));
             }
         });
     }

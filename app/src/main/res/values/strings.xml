@@ -67,6 +67,7 @@
     <string name="newHereToReg">Or Sign Up</string>
     <string name="forgotPassStr">Forgot Password?</string>
     <string name="todo">todo</string>
+    <string name="addressHintStr" />
     />
 
 </resources>

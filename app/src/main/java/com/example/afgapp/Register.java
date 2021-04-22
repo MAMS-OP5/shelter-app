@@ -32,7 +32,7 @@ public class Register extends AppCompatActivity {
     EditText fName, fEmail, fPassword, fPhoneNum;
     Button fRegisterBtn;
     TextView fLoginBtn;
-    Button backBtn, updateInfo, browse;
+    Button backBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
     FirebaseFirestore fStore;
@@ -55,8 +55,6 @@ public class Register extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         backBtn = findViewById(R.id.backBtn);
-        updateInfo = findViewById(R.id.updateInfoButton);
-        browse = findViewById(R.id.shelterSideBrowse);
 
         if(fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), ShelterPov.class));
@@ -149,18 +147,5 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        updateInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), UpdateInfo.class));
-            }
-        });
-
-        browse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Search.class));
-            }
-        });
     }
 }
