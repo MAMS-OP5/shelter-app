@@ -19,6 +19,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/backBtn"
         android:layout_width="wrap_content"
@@ -31,6 +32,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/navBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/navBar" />
+
     <TextView
         android:id="@+id/shelterName"
         android:layout_width="462dp"
@@ -69,8 +71,8 @@
 
     <EditText
         android:id="@+id/shelterResources"
-        android:layout_width="456dp"
-        android:layout_height="250dp"
+        android:layout_width="421dp"
+        android:layout_height="222dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
@@ -82,8 +84,8 @@
 
     <TextView
         android:id="@+id/resourcesText"
-        android:layout_width="527dp"
-        android:layout_height="461dp"
+        android:layout_width="502dp"
+        android:layout_height="407dp"
         android:layout_marginBottom="20dp"
         android:background="@color/white"
         android:gravity="center_horizontal"
@@ -100,11 +102,11 @@
         app:layout_constraintVertical_bias="0.189" />
 
     <EditText
-        android:id="@+id/phoneNumber"
+        android:id="@+id/name"
         android:layout_width="489dp"
         android:layout_height="56dp"
         android:layout_marginTop="50dp"
-        android:hint="@string/PhoneNumStr"
+        android:hint="@string/facilityNameHintStr"
         app:layout_constraintEnd_toEndOf="@+id/aboutText"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="@+id/aboutText"
@@ -119,36 +121,38 @@
         app:layout_constraintEnd_toEndOf="@+id/aboutText"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <EditText
         android:id="@+id/location"
         android:layout_width="489dp"
         android:layout_height="56dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        android:hint="@string/addressHintStr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shelterEmail" />
 
     <EditText
-        android:id="@+id/miscellaneous"
+        android:id="@+id/phoneNum"
         android:layout_width="489dp"
         android:layout_height="56dp"
         android:layout_marginTop="5dp"
+        android:hint="@string/PhoneNumStr"
         app:layout_constraintEnd_toEndOf="@+id/aboutText"
         app:layout_constraintStart_toStartOf="@+id/aboutText"
         app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <Button
         android:id="@+id/changePhotoBtn"
-        android:layout_width="249dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="10dp"
         android:text="@string/changePhoto"
         android:textAllCaps="false"
-        android:textSize="25sp"
+        android:textSize="15sp"
         app:backgroundTint="#034687"
         app:layout_constraintBottom_toTopOf="@+id/claimThisFacility"
         app:layout_constraintEnd_toEndOf="@+id/resourcesText"
@@ -157,16 +161,19 @@
 
     <Button
         android:id="@+id/submitUpdateBtn"
-        android:layout_width="309dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="195dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#318ED4"
         android:text="@string/submitUpdate"
         android:textAllCaps="false"
-        android:textSize="25sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/resourcesText"
         app:layout_constraintEnd_toEndOf="@+id/resourcesText"
-        app:layout_constraintStart_toStartOf="@+id/resourcesText" />
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/resourcesText"
+        app:layout_constraintTop_toBottomOf="@+id/changePhotoBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
