@@ -34,9 +34,9 @@
 
     <TextView
         android:id="@+id/searchLabel"
-        android:layout_width="401dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
         android:background="#034687"
         android:gravity="center"
         android:text="@string/SearchFor"

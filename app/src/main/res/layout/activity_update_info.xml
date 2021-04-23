@@ -31,10 +31,11 @@
         app:layout_constraintBottom_toBottomOf="@+id/navBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/navBar" />
+
     <TextView
         android:id="@+id/shelterName"
-        android:layout_width="462dp"
-        android:layout_height="66dp"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
@@ -54,7 +55,7 @@
         android:id="@+id/aboutText"
         android:layout_width="528dp"
         android:layout_height="317dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@color/white"
         android:gravity="center_horizontal"
         android:textAlignment="center"
@@ -68,62 +69,30 @@
         tools:text="@string/about" />
 
     <EditText
-        android:id="@+id/shelterResources"
-        android:layout_width="482dp"
-        android:layout_height="234dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
-        app:layout_constraintStart_toStartOf="@+id/resourcesText"
-        app:layout_constraintTop_toTopOf="@+id/resourcesText"
-        android:autofillHints="" />
-
-    <TextView
-        android:id="@+id/resourcesText"
-        android:layout_width="528dp"
-        android:layout_height="430dp"
-        android:layout_marginBottom="20dp"
-        android:background="@color/white"
-        android:gravity="center_horizontal"
-        android:text="@string/resources"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/aboutText"
-        app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toBottomOf="@+id/aboutText"
-        app:layout_constraintVertical_bias="0.189" />
-
-    <EditText
         android:id="@+id/phoneNumber"
         android:layout_width="489dp"
         android:layout_height="56dp"
         android:layout_marginTop="50dp"
+        android:autofillHints=""
         android:hint="@string/PhoneNumStr"
+        android:inputType="phone"
         app:layout_constraintEnd_toEndOf="@+id/aboutText"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toTopOf="@+id/aboutText"
-        android:inputType="TODO"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="@+id/aboutText" />
 
     <EditText
         android:id="@+id/shelterEmail"
         android:layout_width="489dp"
         android:layout_height="56dp"
         android:layout_marginTop="5dp"
+        android:autofillHints=""
         android:hint="@string/enterEmailHintStr"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@+id/aboutText"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumber"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
 
     <EditText
         android:id="@+id/location"
@@ -148,10 +117,44 @@
         app:layout_constraintTop_toBottomOf="@+id/location"
         android:autofillHints="" />
 
+    <TextView
+        android:id="@+id/resourcesText"
+        android:layout_width="528dp"
+        android:layout_height="430dp"
+        android:layout_marginBottom="80dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:text="@string/resources"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toBottomOf="@+id/aboutText"
+        app:layout_constraintVertical_bias="0.189" />
+
+    <EditText
+        android:id="@+id/shelterResources"
+        android:layout_width="482dp"
+        android:layout_height="234dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:autofillHints=""
+        android:inputType="textShortMessage"
+        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
+        app:layout_constraintStart_toStartOf="@+id/resourcesText"
+        app:layout_constraintTop_toTopOf="@+id/resourcesText" />
+
     <Button
         android:id="@+id/changePhotoBtn"
-        android:layout_width="296dp"
-        android:layout_height="58dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="10dp"
         android:text="@string/changePhoto"
@@ -167,8 +170,8 @@
 
     <Button
         android:id="@+id/submitUpdateBtn"
-        android:layout_width="309dp"
-        android:layout_height="59dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="#318ED4"
         android:text="@string/submitUpdate"

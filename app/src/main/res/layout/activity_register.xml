@@ -34,11 +34,11 @@
 
     <TextView
         android:id="@+id/pageLabel"
-        android:layout_width="466dp"
-        android:layout_height="60dp"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:width="350sp"
@@ -50,19 +50,16 @@
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintTop_toBottomOf="@+id/navBar4" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/whiteBox"
-        android:layout_width="537dp"
-        android:layout_height="762dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="500dp"
+        android:layout_height="600dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="80dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +69,7 @@
 
         <EditText
             android:id="@+id/enterFacName"
-            android:layout_width="373dp"
+            android:layout_width="450dp"
             android:layout_height="80dp"
             android:layout_marginTop="40dp"
             android:ems="10"
@@ -84,7 +81,7 @@
 
         <EditText
             android:id="@+id/enterEmail"
-            android:layout_width="372dp"
+            android:layout_width="450dp"
             android:layout_height="80dp"
             android:layout_marginTop="25dp"
             android:ems="10"
@@ -96,8 +93,8 @@
 
         <EditText
             android:id="@+id/enterPhone"
-            android:layout_width="372dp"
-            android:layout_height="84dp"
+            android:layout_width="450dp"
+            android:layout_height="80dp"
             android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="@string/PhoneNumStr"
@@ -108,8 +105,8 @@
 
         <EditText
             android:id="@+id/enterPassword2"
-            android:layout_width="376dp"
-            android:layout_height="86dp"
+            android:layout_width="450dp"
+            android:layout_height="80dp"
             android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="@string/EnterPasswordHintStr"
@@ -121,15 +118,14 @@
 
         <Button
             android:id="@+id/registerBtn"
-            android:layout_width="194dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="35dp"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
             android:text="@string/CreateAccButtonStr"
             android:textSize="30sp"
             android:textStyle="bold"
             app:backgroundTint="#034687"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enterPassword2" />
 
@@ -142,15 +138,15 @@
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registerBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/registerBtn"
+            app:layout_constraintVertical_bias="0.77" />
 
         <TextView
             android:id="@+id/createText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="@string/loginBtn"
             android:textColor="#034687"
             android:textSize="16sp"

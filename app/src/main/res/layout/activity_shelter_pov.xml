@@ -31,8 +31,8 @@
 
     <ImageView
         android:id="@+id/shelterImage"
-        android:layout_width="390dp"
-        android:layout_height="261dp"
+        android:layout_width="400dp"
+        android:layout_height="175dp"
         android:background="@drawable/shelter_image"
         app:layout_constraintBottom_toTopOf="@+id/shelterName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,8 +42,8 @@
 
     <TextView
         android:id="@+id/shelterName"
-        android:layout_width="468dp"
-        android:layout_height="63dp"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="20dp"
         android:width="350sp"
         android:height="35sp"
@@ -60,9 +60,9 @@
 
     <TextView
         android:id="@+id/shelterPovWhiteBox"
-        android:layout_width="525dp"
-        android:layout_height="495dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_marginBottom="80dp"
         android:width="375sp"
         android:height="350sp"
         android:background="#FFFFFF"
@@ -78,7 +78,7 @@
         android:id="@+id/shelterEmailDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:text="Facility Email"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +90,7 @@
         android:id="@+id/shelterPhoneDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="Facility Phone Number"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/shelterPovWhiteBox"
@@ -101,7 +101,7 @@
         android:id="@+id/shelterAddressDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="Facility Address"
         android:textSize="20sp"
         android:visibility="visible"
@@ -114,7 +114,7 @@
         android:id="@+id/shelterResourcesDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="Facility Resources (and/or Vacancies)"
         android:textSize="20sp"
         android:visibility="visible"
@@ -125,35 +125,35 @@
 
     <Button
         android:id="@+id/shelterSideBrowse"
-        android:layout_width="209dp"
-        android:layout_height="64dp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/Browse"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:backgroundTint="#318ED4"
         app:layout_constraintBottom_toBottomOf="@+id/shelterPovWhiteBox"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/shelterPovWhiteBox"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/updateInfoButton" />
 
     <Button
         android:id="@+id/updateInfoButton"
-        android:layout_width="258dp"
-        android:layout_height="0dp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/UpdateInfo"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:backgroundTint="#318ED4"
         app:layout_constraintBottom_toBottomOf="@+id/shelterPovWhiteBox"
         app:layout_constraintEnd_toStartOf="@+id/shelterSideBrowse"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/shelterPovWhiteBox" />
 
     <TextView
         android:id="@+id/verifyReminder"
