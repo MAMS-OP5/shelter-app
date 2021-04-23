@@ -68,7 +68,7 @@
         android:backgroundTint="#318ED4"
         android:text="@string/claimThisFacilityStr"
         android:textAllCaps="false"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/shelterInfo"
         app:layout_constraintEnd_toEndOf="@+id/shelterInfo"

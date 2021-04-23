@@ -34,9 +34,13 @@
 
     <TextView
         android:id="@+id/pageLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="466dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:width="350sp"
         android:height="50sp"
         android:background="#034687"
@@ -44,7 +48,8 @@
         android:text="@string/registerLabelStr"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -54,21 +59,22 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/whiteBox"
-        android:layout_width="354dp"
-        android:layout_height="552dp"
+        android:layout_width="537dp"
+        android:layout_height="762dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/pageLabel">
 
         <EditText
             android:id="@+id/enterFacName"
-            android:layout_width="317dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="373dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
             android:ems="10"
             android:hint="@string/facilityNameHintStr"
             android:inputType="textPersonName"
@@ -78,9 +84,9 @@
 
         <EditText
             android:id="@+id/enterEmail"
-            android:layout_width="317dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="372dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="@string/enterEmailHintStr"
             android:inputType="textEmailAddress"
@@ -90,9 +96,9 @@
 
         <EditText
             android:id="@+id/enterPhone"
-            android:layout_width="317dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="372dp"
+            android:layout_height="84dp"
+            android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="@string/PhoneNumStr"
             android:inputType="phone"
@@ -102,23 +108,25 @@
 
         <EditText
             android:id="@+id/enterPassword2"
-            android:layout_width="317dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="376dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="@string/EnterPasswordHintStr"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintHorizontal_bias="0.513"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enterPhone" />
 
         <Button
             android:id="@+id/registerBtn"
-            android:layout_width="162dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="194dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="35dp"
             android:text="@string/CreateAccButtonStr"
+            android:textSize="30sp"
+            android:textStyle="bold"
             app:backgroundTint="#034687"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -142,7 +150,7 @@
             android:id="@+id/createText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:text="@string/loginBtn"
             android:textColor="#034687"
             android:textSize="16sp"

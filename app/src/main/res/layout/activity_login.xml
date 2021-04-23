@@ -32,8 +32,8 @@
 
     <TextView
         android:id="@+id/pageLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="444dp"
+        android:layout_height="63dp"
         android:layout_marginTop="28dp"
         android:width="350sp"
         android:height="50sp"
@@ -42,7 +42,8 @@
         android:text="@string/LoginLabelStr"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -52,34 +53,41 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/whiteBox"
-        android:layout_width="354dp"
-        android:layout_height="552dp"
+        android:layout_width="532dp"
+        android:layout_height="762dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/pageLabel">
 
         <EditText
             android:id="@+id/enterEmail"
-            android:layout_width="317dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="379dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="60dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/enterEmailHintStr"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.567"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/enterPassword"
-            android:layout_width="317dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="377dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="30dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/EnterPasswordHintStr"
             android:inputType="textPassword"
@@ -89,25 +97,29 @@
 
         <Button
             android:id="@+id/loginBtn"
-            android:layout_width="162dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="50dp"
+            android:layout_width="188dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="60dp"
             android:text="@string/loginButtonStr"
+            android:textSize="30sp"
+            android:textStyle="bold"
             app:backgroundTint="#034687"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enterPassword" />
 
         <TextView
             android:id="@+id/createText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_width="165dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal"
             android:text="@string/newHereToReg"
+            android:textAlignment="center"
             android:textColor="#034687"
-            android:textSize="16sp"
+            android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 
@@ -128,14 +140,17 @@
             android:id="@+id/forgotPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:layout_marginBottom="30dp"
             android:text="@string/forgotPassStr"
             android:textColor="#034687"
-            android:textSize="16sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/progressBar"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/createText"
-            android:textStyle="bold"/>
+            app:layout_constraintVertical_bias="0.084" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,28 +31,28 @@
 
     <ImageView
         android:id="@+id/shelterImage"
-        android:layout_width="375dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="390dp"
+        android:layout_height="261dp"
         android:background="@drawable/shelter_image"
         app:layout_constraintBottom_toTopOf="@+id/shelterName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verifyReminder" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812" />
 
     <TextView
         android:id="@+id/shelterName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_width="468dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="20dp"
         android:width="350sp"
         android:height="35sp"
         android:background="#034687"
         android:gravity="center"
         android:text="Facility Name"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/shelterPovWhiteBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -60,9 +60,9 @@
 
     <TextView
         android:id="@+id/shelterPovWhiteBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_width="525dp"
+        android:layout_height="495dp"
+        android:layout_marginBottom="20dp"
         android:width="375sp"
         android:height="350sp"
         android:background="#FFFFFF"
@@ -72,7 +72,6 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -105,7 +104,7 @@
         android:layout_marginTop="20dp"
         android:text="Facility Address"
         android:textSize="20sp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +117,7 @@
         android:layout_marginTop="20dp"
         android:text="Facility Resources (and/or Vacancies)"
         android:textSize="20sp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,10 +125,14 @@
 
     <Button
         android:id="@+id/shelterSideBrowse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_width="209dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/Browse"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:backgroundTint="#318ED4"
         app:layout_constraintBottom_toBottomOf="@+id/shelterPovWhiteBox"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,10 +141,14 @@
 
     <Button
         android:id="@+id/updateInfoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
+        android:layout_width="258dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/UpdateInfo"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:backgroundTint="#318ED4"
         app:layout_constraintBottom_toBottomOf="@+id/shelterPovWhiteBox"
         app:layout_constraintEnd_toStartOf="@+id/shelterSideBrowse"
