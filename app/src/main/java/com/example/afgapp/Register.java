@@ -81,6 +81,11 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
+                if(phone.isEmpty()) {
+                    fPhoneNum.setError("Phone Number is Required");
+                    return;
+                }
+
                 if(password.isEmpty()) {
                     fPassword.setError("Password is Required");
                     return;
