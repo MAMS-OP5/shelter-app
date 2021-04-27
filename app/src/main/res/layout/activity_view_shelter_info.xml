@@ -19,8 +19,8 @@
 
     <TextView
         android:id="@+id/shelterName"
-        android:layout_width="462dp"
-        android:layout_height="66dp"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
         android:layout_marginTop="20dp"
         android:background="#034687"
         android:gravity="center"
@@ -60,15 +60,15 @@
 
     <Button
         android:id="@+id/claimThisFacility"
-        android:layout_width="436dp"
-        android:layout_height="67dp"
+        android:layout_width="450dp"
+        android:layout_height="70dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#318ED4"
         android:text="@string/claimThisFacilityStr"
         android:textAllCaps="false"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/shelterInfo"
         app:layout_constraintEnd_toEndOf="@+id/shelterInfo"

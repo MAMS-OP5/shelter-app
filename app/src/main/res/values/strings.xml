@@ -46,6 +46,8 @@
     <string name="resources">Resources</string>
     <string name="changePhoto">Change Photo</string>
     <string name="submitUpdate">Submit Update</string>
+    <string name="EnterLocationHintStr">Facility Location</string>
+    <string name="EnterExtraInfoHintStr">Additional Information</string>
 
     //xml searchable
     <string name="app_label">Shelter Name</string>

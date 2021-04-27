@@ -16,6 +16,7 @@
         <activity android:name=".Results" />
         <activity android:name=".Search" />
         <activity android:name=".ShelterPov" />
+        <activity android:name=".UpdateInfo" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,15 +25,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login" />
-        <activity android:name=".SearchableActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
-        </activity>
         <activity android:name=".Register">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
