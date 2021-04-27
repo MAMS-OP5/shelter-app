@@ -69,6 +69,7 @@
     <string name="todo">todo</string>
     <string name="addressHintStr">Address</string>
     <string name="miscHintStr">Address</string>
+    <string name="resetPassBtnStr">Reset Password</string>
     />
 
 </resources>

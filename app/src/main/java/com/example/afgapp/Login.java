@@ -101,8 +101,8 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                EditText resetMail = new EditText(v.getContext());
-                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
+                final EditText resetMail = new EditText(v.getContext());
+                final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
                 passwordResetDialog.setTitle("Reset Password");
                 passwordResetDialog.setMessage("Enter Your Email to Receive a Password Reset Link.");
                 passwordResetDialog.setView(resetMail);

@@ -53,10 +53,10 @@
         app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <TextView
-        android:id="@+id/aboutText"
-        android:layout_width="528dp"
-        android:layout_height="317dp"
-        android:layout_marginTop="25dp"
+        android:id="@+id/whiteBoxAbout"
+        android:layout_width="525dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="15dp"
         android:background="@color/white"
         android:gravity="center_horizontal"
         android:textAlignment="center"
@@ -66,8 +66,20 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shelterName"
-        tools:text="@string/about" />
+        app:layout_constraintTop_toBottomOf="@+id/shelterName" />
+
+    <TextView
+        android:id="@+id/aboutLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/whiteBoxAbout" />
 
     <EditText
         android:id="@+id/shelterResources"
@@ -75,31 +87,47 @@
         android:layout_height="222dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
-        app:layout_constraintStart_toStartOf="@+id/resourcesText"
-        app:layout_constraintTop_toTopOf="@+id/resourcesText" />
+        android:layout_marginBottom="80dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/whiteBoxResLabel"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoxResLabel"
+        app:layout_constraintStart_toStartOf="@+id/whiteBoxResLabel"
+        app:layout_constraintTop_toTopOf="@+id/whiteBoxResLabel" />
 
     <TextView
-        android:id="@+id/resourcesText"
-        android:layout_width="502dp"
-        android:layout_height="407dp"
+        android:id="@+id/whiteBoxResLabel"
+        android:layout_width="510dp"
+        android:layout_height="410dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
         android:background="@color/white"
         android:gravity="center_horizontal"
-        android:text="@string/resources"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/aboutText"
-        app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toBottomOf="@+id/aboutText"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoxAbout"
+        app:layout_constraintStart_toStartOf="@+id/whiteBoxAbout"
+        app:layout_constraintTop_toBottomOf="@+id/whiteBoxAbout"
         app:layout_constraintVertical_bias="0.189" />
+
+    <TextView
+        android:id="@+id/resourcesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resources"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/whiteBoxResLabel" />
 
     <EditText
         android:id="@+id/name"
@@ -107,10 +135,10 @@
         android:layout_height="56dp"
         android:layout_marginTop="50dp"
         android:hint="@string/facilityNameHintStr"
-        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoxAbout"
         app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toTopOf="@+id/aboutText" />
+        app:layout_constraintStart_toStartOf="@+id/whiteBoxAbout"
+        app:layout_constraintTop_toTopOf="@+id/whiteBoxAbout" />
 
     <EditText
         android:id="@+id/shelterEmail"
@@ -118,9 +146,9 @@
         android:layout_height="56dp"
         android:layout_marginTop="5dp"
         android:hint="@string/enterEmailHintStr"
-        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoxAbout"
         app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintStart_toStartOf="@+id/whiteBoxAbout"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <EditText
@@ -140,8 +168,8 @@
         android:layout_height="56dp"
         android:layout_marginTop="5dp"
         android:hint="@string/PhoneNumStr"
-        app:layout_constraintEnd_toEndOf="@+id/aboutText"
-        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoxAbout"
+        app:layout_constraintStart_toStartOf="@+id/whiteBoxAbout"
         app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <Button
@@ -155,8 +183,8 @@
         android:textSize="15sp"
         app:backgroundTint="#034687"
         app:layout_constraintBottom_toTopOf="@+id/claimThisFacility"
-        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
-        app:layout_constraintStart_toStartOf="@+id/resourcesText"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoxResLabel"
+        app:layout_constraintStart_toStartOf="@+id/whiteBoxResLabel"
         app:layout_constraintTop_toBottomOf="@+id/shelterResources" />
 
     <Button
@@ -170,10 +198,23 @@
         android:textAllCaps="false"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/resourcesText"
-        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
+        app:layout_constraintBottom_toBottomOf="@+id/whiteBoxResLabel"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoxResLabel"
         app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="@+id/resourcesText"
+        app:layout_constraintStart_toStartOf="@+id/whiteBoxResLabel"
         app:layout_constraintTop_toBottomOf="@+id/changePhotoBtn" />
+
+    <Button
+        android:id="@+id/resetPassBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#034687"
+        android:text="@string/resetPassBtnStr"
+        app:backgroundTint="#034687"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/navBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
