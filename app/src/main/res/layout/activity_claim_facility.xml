@@ -34,7 +34,7 @@
 
 
     <TextView
-        android:id="@+id/searchLabel"
+        android:id="@+id/searchHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -63,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchLabel">
+        app:layout_constraintTop_toBottomOf="@+id/searchHeader">
 
         <TextView
             android:id="@+id/instructions"
@@ -130,19 +130,18 @@
             android:id="@+id/haveFacilityButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70sp"
-            android:layout_marginLeft="70sp"
             android:layout_marginTop="164dp"
-            android:layout_marginEnd="70sp"
-            android:layout_marginRight="70sp"
+            android:width="300sp"
             android:paddingLeft="10sp"
             android:paddingRight="10sp"
             android:text="@string/haveFacilityButton"
             android:textSize="18sp"
             app:backgroundTint="#034687"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/submitButton" />
+            app:layout_constraintTop_toTopOf="@+id/submitButton"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

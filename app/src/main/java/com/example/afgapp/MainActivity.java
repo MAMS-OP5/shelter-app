@@ -6,29 +6,35 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity {
-    Button lookShelterBtn;
-    Button amShelterBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lookShelterBtn = findViewById(R.id.lookForShelterButton);
-        amShelterBtn = findViewById(R.id.amFacilityBtn);
-        lookShelterBtn.setOnClickListener(new View.OnClickListener() {
+        Button lookShelter = (Button) findViewById(R.id.lookForShelterButton);
+
+        lookShelter.setOnClickListener(new OnClickListener(){
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Search.class));
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this,Search.class);
+                startActivity(intent);
             }
         });
-        amShelterBtn.setOnClickListener(new View.OnClickListener() {
+
+        Button haveShelter = (Button) findViewById(R.id.amFacilityButton);
+
+        haveShelter.setOnClickListener(new OnClickListener(){
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Register.class));
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this,Register.class);
+                startActivity(intent);
             }
         });
+
         }
     }
 

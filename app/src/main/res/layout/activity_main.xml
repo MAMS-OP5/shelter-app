@@ -40,14 +40,14 @@
         android:text="@string/LookingForShelter"
         android:textSize="20sp"
         app:backgroundTint="#034687"
-        app:layout_constraintBottom_toTopOf="@+id/amFacilityBtn"
+        app:layout_constraintBottom_toTopOf="@+id/amFacilityButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IAm" />
 
     <Button
-        android:id="@+id/amFacilityBtn"
+        android:id="@+id/amFacilityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="350sp"
