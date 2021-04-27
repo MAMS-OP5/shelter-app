@@ -19,8 +19,6 @@
     <string name="subButton">Submit</string>
     <string name="haveFacilityButton">I already claimed my facility (Login)</string>
 
-    //page 7 Login defined with imported login activity template
-
     //page 8 Shelter POV
     <string name="UpdateInfo">Update Info</string>
     <string name="Browse">Browse</string>
@@ -34,9 +32,13 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-    //xml searchable
+    //xml search
     <string name="app_label">Shelter Name</string>
     <string name="search_hint">Search by Location or Zip Code</string>
+    <string name="search">Search</string>
+
+    //results
+    <string name="email">email</string>
 
     //Register and Login
     <string name="action_sign_in">Sign in or register</string>

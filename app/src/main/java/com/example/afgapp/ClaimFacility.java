@@ -23,11 +23,11 @@ public class ClaimFacility extends AppCompatActivity {
             }
         });
 
-        Button amShelter = (Button) findViewById(R.id.FacilityOwnerButton);
+        Button amShelter = (Button) findViewById(R.id.haveFacilityButton);
 
         amShelter.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(ClaimFacility.this, Results.class));
+                startActivity(new Intent(ClaimFacility.this, Login.class));
             }
         });
     }

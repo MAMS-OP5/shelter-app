@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button lookShelter = (Button) findViewById(R.id.LookForShelterButton);
+        Button lookShelter = (Button) findViewById(R.id.lookForShelterButton);
 
         lookShelter.setOnClickListener(new OnClickListener(){
             @Override
@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button haveShelter = (Button) findViewById(R.id.FacilityOwnerButton);
+        Button haveShelter = (Button) findViewById(R.id.amFacilityButton);
 
         haveShelter.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this,ClaimFacility.class);
+                Intent intent = new Intent(MainActivity.this,Register.class);
                 startActivity(intent);
             }
         });
