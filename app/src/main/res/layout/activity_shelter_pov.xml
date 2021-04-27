@@ -31,10 +31,10 @@
 
     <ImageView
         android:id="@+id/shelterImage"
-        android:layout_width="400dp"
-        android:layout_height="175dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="500dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/shelter_image"
         app:layout_constraintBottom_toTopOf="@+id/shelterName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
         android:id="@+id/shelterPovWhiteBox"
         android:layout_width="500dp"
         android:layout_height="500dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:width="375sp"
         android:height="350sp"
         android:background="#FFFFFF"
