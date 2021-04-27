@@ -53,13 +53,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/whiteBox"
         android:layout_width="500dp"
-        android:layout_height="700dp"
+        android:layout_height="600dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="100dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
         <EditText
             android:id="@+id/enterEmail"
             android:layout_width="450dp"
-            android:layout_height="100dp"
+            android:layout_height="75dp"
             android:layout_marginTop="60dp"
             android:autofillHints=""
             android:ems="10"
@@ -84,7 +84,7 @@
         <EditText
             android:id="@+id/enterPassword"
             android:layout_width="450dp"
-            android:layout_height="100dp"
+            android:layout_height="75dp"
             android:layout_marginTop="30dp"
             android:autofillHints=""
             android:ems="10"
@@ -132,7 +132,6 @@
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView

@@ -33,12 +33,13 @@
         android:id="@+id/shelterImage"
         android:layout_width="400dp"
         android:layout_height="175dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/shelter_image"
         app:layout_constraintBottom_toTopOf="@+id/shelterName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <TextView
         android:id="@+id/shelterName"
@@ -62,7 +63,7 @@
         android:id="@+id/shelterPovWhiteBox"
         android:layout_width="500dp"
         android:layout_height="500dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="50dp"
         android:width="375sp"
         android:height="350sp"
         android:background="#FFFFFF"
