@@ -53,11 +53,12 @@
 
     <TextView
         android:id="@+id/aboutText"
-        android:layout_width="528dp"
-        android:layout_height="317dp"
+        android:layout_width="500dp"
+        android:layout_height="270dp"
         android:layout_marginTop="20dp"
         android:background="@color/white"
         android:gravity="center_horizontal"
+        android:text="@string/about"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/black"
@@ -65,13 +66,12 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shelterName"
-        tools:text="@string/about" />
+        app:layout_constraintTop_toBottomOf="@+id/shelterName" />
 
     <EditText
         android:id="@+id/phoneNumber"
-        android:layout_width="489dp"
-        android:layout_height="56dp"
+        android:layout_width="450dp"
+        android:layout_height="50dp"
         android:layout_marginTop="50dp"
         android:autofillHints=""
         android:hint="@string/PhoneNumStr"
@@ -83,9 +83,9 @@
 
     <EditText
         android:id="@+id/shelterEmail"
-        android:layout_width="489dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="450dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="3dp"
         android:autofillHints=""
         android:hint="@string/enterEmailHintStr"
         android:inputType="textEmailAddress"
@@ -96,32 +96,33 @@
 
     <EditText
         android:id="@+id/location"
-        android:layout_width="489dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="450dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="3dp"
+        android:autofillHints=""
         android:hint="@string/EnterLocationHintStr"
         app:layout_constraintEnd_toEndOf="@+id/resourcesText"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toBottomOf="@+id/shelterEmail"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/shelterEmail" />
 
     <EditText
         android:id="@+id/miscellaneous"
-        android:layout_width="489dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="450dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="3dp"
+        android:autofillHints=""
         android:hint="@string/EnterExtraInfoHintStr"
         app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toBottomOf="@+id/location"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <TextView
         android:id="@+id/resourcesText"
-        android:layout_width="528dp"
-        android:layout_height="430dp"
-        android:layout_marginBottom="80dp"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginBottom="100dp"
         android:background="@color/white"
         android:gravity="center_horizontal"
         android:text="@string/resources"
@@ -138,8 +139,8 @@
 
     <EditText
         android:id="@+id/shelterResources"
-        android:layout_width="482dp"
-        android:layout_height="234dp"
+        android:layout_width="450dp"
+        android:layout_height="150dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
@@ -155,8 +156,8 @@
         android:id="@+id/changePhotoBtn"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/changePhoto"
         android:textAllCaps="false"
         android:textSize="30sp"
@@ -172,7 +173,7 @@
         android:id="@+id/submitUpdateBtn"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="25dp"
         android:backgroundTint="#318ED4"
         android:text="@string/submitUpdate"
         android:textAllCaps="false"
