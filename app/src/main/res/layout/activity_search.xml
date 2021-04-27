@@ -33,30 +33,19 @@
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
-        android:id="@+id/searchHeader"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/searchLabel"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
         android:background="#034687"
         android:gravity="center"
         android:text="@string/SearchFor"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navBar3" />
-
-    <Button
-        android:id="@+id/searchBtn"
-        android:layout_width="180sp"
-        android:layout_height="60sp"
-        android:layout_marginTop="452dp"
-        android:text="@string/search"
-        app:backgroundTint="#034687"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchHeader" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

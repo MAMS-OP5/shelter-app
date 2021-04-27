@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/updateConstraintLayout"
+    android:id="@+id/emailAddress"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/afg_bg"
@@ -12,10 +11,189 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/navBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="82dp"
         android:background="#034687"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="#034687"
+        android:text="@string/backBtnStr"
+        app:backgroundTint="#034687"
+        app:layout_constraintBottom_toBottomOf="@+id/navBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/navBar" />
+
+    <TextView
+        android:id="@+id/shelterName"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#034687"
+        android:gravity="center"
+        android:text="@string/updateShelterInfo"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+
+    <TextView
+        android:id="@+id/aboutText"
+        android:layout_width="500dp"
+        android:layout_height="270dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:text="@string/about"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shelterName" />
+
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="450dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:autofillHints=""
+        android:hint="@string/PhoneNumStr"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toTopOf="@+id/aboutText" />
+
+    <EditText
+        android:id="@+id/shelterEmail"
+        android:layout_width="450dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="3dp"
+        android:autofillHints=""
+        android:hint="@string/enterEmailHintStr"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="450dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="3dp"
+        android:autofillHints=""
+        android:hint="@string/EnterLocationHintStr"
+        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toBottomOf="@+id/shelterEmail" />
+
+    <EditText
+        android:id="@+id/miscellaneous"
+        android:layout_width="450dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="3dp"
+        android:autofillHints=""
+        android:hint="@string/EnterExtraInfoHintStr"
+        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
+
+    <TextView
+        android:id="@+id/resourcesText"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:text="@string/resources"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintStart_toStartOf="@+id/aboutText"
+        app:layout_constraintTop_toBottomOf="@+id/aboutText"
+        app:layout_constraintVertical_bias="0.189" />
+
+    <EditText
+        android:id="@+id/shelterResources"
+        android:layout_width="450dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:autofillHints=""
+        android:inputType="textShortMessage"
+        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
+        app:layout_constraintStart_toStartOf="@+id/resourcesText"
+        app:layout_constraintTop_toTopOf="@+id/resourcesText" />
+
+    <Button
+        android:id="@+id/changePhotoBtn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/changePhoto"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:backgroundTint="#034687"
+        app:layout_constraintBottom_toTopOf="@+id/claimThisFacility"
+        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/resourcesText"
+        app:layout_constraintTop_toBottomOf="@+id/shelterResources" />
+
+    <Button
+        android:id="@+id/submitUpdateBtn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="#318ED4"
+        android:text="@string/submitUpdate"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/resourcesText"
+        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
+        app:layout_constraintStart_toStartOf="@+id/resourcesText" />
+
+    <Button
+        android:id="@+id/resetPassBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#034687"
+        android:text="@string/resetPassBtnStr"
+        app:backgroundTint="#034687"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/navBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

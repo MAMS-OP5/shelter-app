@@ -10,12 +10,14 @@ import android.view.View.OnClickListener;
 
 public class ClaimFacility extends AppCompatActivity {
 
+    Button backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_claim_facility);
 
         Button lookShelter = (Button) findViewById(R.id.submitButton);
+        backBtn = findViewById(R.id.backBtn);
 
         lookShelter.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -23,11 +25,18 @@ public class ClaimFacility extends AppCompatActivity {
             }
         });
 
-        Button amShelter = (Button) findViewById(R.id.haveFacilityButton);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Register.class));
+            }
+        });
+
+        Button amShelter = (Button) findViewById(R.id.amFacilityBtn);
 
         amShelter.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(ClaimFacility.this, Login.class));
+                startActivity(new Intent(ClaimFacility.this, Results.class));
             }
         });
     }
