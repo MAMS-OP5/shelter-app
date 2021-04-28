@@ -32,7 +32,7 @@ public class ClaimFacility extends AppCompatActivity {
             }
         });
 
-        Button amShelter = (Button) findViewById(R.id.amFacilityBtn);
+        Button amShelter = (Button) findViewById(R.id.haveFacilityButton);
 
         amShelter.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {

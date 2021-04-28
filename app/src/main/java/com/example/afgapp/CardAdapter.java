@@ -25,8 +25,7 @@ public class CardAdapter extends FirebaseRecyclerAdapter<Card, CardAdapter.CardV
         // model class(here "Card.class")
         @Override
         protected void
-        onBindViewHolder(@NonNull CardViewholder holder,
-                         int position, @NonNull Card model)
+        onBindViewHolder(@NonNull CardViewholder holder, int position, @NonNull Card model)
         {
 
             // Add shelterNameCard from model class (here
