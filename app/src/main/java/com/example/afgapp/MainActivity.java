@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button haveShelter = (Button) findViewById(R.id.amFacilityButton);
+        Button haveShelter = (Button) findViewById(R.id.haveFacilityButton);
 
         haveShelter.setOnClickListener(new OnClickListener(){
             @Override
