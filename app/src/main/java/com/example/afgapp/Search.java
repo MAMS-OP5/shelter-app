@@ -32,6 +32,7 @@ public class Search extends AppCompatActivity {
             }
         });
 
+        //search button
         Button search = (Button) findViewById(R.id.searchBtn);
 
         search.setOnClickListener(new View.OnClickListener(){
