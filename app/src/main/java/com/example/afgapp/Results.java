@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -61,6 +64,16 @@ public class Results extends AppCompatActivity {
 
         // To display the Recycler view linearly
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        Button back = (Button) findViewById(R.id.backBtn);
+
+        back.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Results.this, Search.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // Function to tell the app to start getting

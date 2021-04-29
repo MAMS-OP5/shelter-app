@@ -40,7 +40,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     //For Card and Results
-    implementation 'com.firebaseui:firebase-ui-database:0.4.0'
+    implementation 'com.firebaseui:firebase-ui-database:4.3.2'
     implementation 'com.firebaseui:firebase-ui-database:4.3.2'
 
     //Firebase
