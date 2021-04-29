@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/afg_bg"
-    tools:context=".viewShelterInfo">
+    tools:context=".ViewShelterInfo">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topBlueNavBar"
