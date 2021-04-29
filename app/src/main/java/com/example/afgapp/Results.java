@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,7 +22,6 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -61,6 +63,16 @@ public class Results extends AppCompatActivity {
 
         // To display the Recycler view linearly
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        Button back = (Button) findViewById(R.id.backBtn);
+
+        back.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Results.this,Search.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // Function to tell the app to start getting
@@ -72,12 +84,13 @@ public class Results extends AppCompatActivity {
     }
 
     // Function to tell the app to stop getting
-    // data from database on stoping of the activity
+    // data from database on stopping of the activity
     @Override protected void onStop()
     {
         super.onStop();
         adapter.stopListening();
     }
+
 }
 
        /* phone = findViewById(R.id.shelterPhoneDisplay);
