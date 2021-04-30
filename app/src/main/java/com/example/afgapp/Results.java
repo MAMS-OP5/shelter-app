@@ -1,111 +1,104 @@
 package com.example.afgapp;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.database.Query;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 
 public class Results extends AppCompatActivity {
-    TextView name, email, phone, resources, address;
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
-    String userId;
 
-    private RecyclerView recyclerView;
-    CardAdapter adapter;
-    DatabaseReference ref;
+    private RecyclerView resultsView;
+    private FirestoreRecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        // Create a instance of the database and get
-        // its reference
-        ref= FirebaseDatabase.getInstance().getReference();
+        FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+        resultsView = findViewById(R.id.recyclerView);
 
-        recyclerView = findViewById(R.id.recycler1);
+        // Create a instance of the database and get its reference
+        //  ref = FirebaseDatabase.getInstance().getReference();
 
+        // Query
+        Query query = fStore.collection("users"); // add .orderBy?
 
+        //Recycler Options
+        FirestoreRecyclerOptions<Card> options = new FirestoreRecyclerOptions.Builder<Card>().setQuery(query, Card.class).build();
 
+        adapter = new FirestoreRecyclerAdapter<Card, CardViewHolder>(options) {
+            @NonNull
+            @Override
+            public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card, parent, false);
+                return new CardViewHolder(view);
 
-        // It is a class provide by the FirebaseUI to make a
-        // query in the database to fetch appropriate data
-        FirebaseRecyclerOptions<Card> options = new FirebaseRecyclerOptions.Builder<Card>().setQuery(ref, Card.class).build();
-        // Connecting object of required Adapter class to
-        // the Adapter class itself
-        adapter = new CardAdapter(options);
-        // Connecting Adapter class with the Recycler view*/
-        recyclerView.setAdapter(adapter);
+            }
 
-        // To display the Recycler view linearly
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            @Override
+            protected void onBindViewHolder(@NonNull CardViewHolder holder, int i, @NonNull Card card) {
+                holder.fNameCard.setText(card.getfName());
+                holder.emailCard.setText(card.getEmail());
+                holder.phoneCard.setText(card.getPhone());
+            }
+        };
+
+        resultsView.setHasFixedSize(true);
+        resultsView.setLayoutManager(new LinearLayoutManager(this));
+        resultsView.setAdapter(adapter);
+
     }
+
+    private class CardViewHolder extends RecyclerView.ViewHolder {
+        private TextView fNameCard;
+        private TextView emailCard;
+        private TextView phoneCard;
+
+        public CardViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            fNameCard = itemView.findViewById(R.id.fNameCard);
+            emailCard = itemView.findViewById(R.id.emailCard);
+            phoneCard = itemView.findViewById(R.id.phoneCard);
+        }
+    }
+
 
     // Function to tell the app to start getting
     // data from database on starting of the activity
-    @Override protected void onStart()
-    {
+    @Override
+    protected void onStart() {
         super.onStart();
         adapter.startListening();
     }
 
     // Function to tell the app to stop getting
-    // data from database on stoping of the activity
-    @Override protected void onStop()
-    {
+    // data from database on stopping of the activity
+    @Override
+    protected void onStop() {
         super.onStop();
         adapter.stopListening();
     }
 }
-
-       /* phone = findViewById(R.id.shelterPhoneDisplay);
-        name = findViewById(R.id.shelterName);
-        email = findViewById(R.id.shelterEmailDisplay);
-
-        fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
-
-        userId = fAuth.getCurrentUser().getUid();
-
-        ref= FirebaseDatabase.getInstance().getReference().child("users").child("1");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String shelterName=dataSnapshot.child("fName").getValue().toString();
-                name.setText(shelterName);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
-}*/
-
 
 
 

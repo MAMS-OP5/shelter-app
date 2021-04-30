@@ -22,6 +22,7 @@ public class Search extends AppCompatActivity {
         TextView lookShelter = findViewById(R.id.searchHeader);
 
 
+        //Back Button
         Button back = (Button) findViewById(R.id.backBtn);
 
         back.setOnClickListener(new View.OnClickListener(){
@@ -32,7 +33,7 @@ public class Search extends AppCompatActivity {
             }
         });
 
-        //search button
+        //Search Button
         Button search = (Button) findViewById(R.id.searchBtn);
 
         search.setOnClickListener(new View.OnClickListener(){
