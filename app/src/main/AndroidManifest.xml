@@ -22,6 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login"/>
+        <activity android:name=".UpdateInfo"/>
+        <activity android:name=".viewShelterInfo"/>
 
         <activity android:name=".Register">
             <intent-filter>
