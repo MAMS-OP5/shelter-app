@@ -14,7 +14,7 @@ public class Card {
         private String phone;
 
         // Mandatory empty constructor for use of FirebaseUI
-        public void Card() {}
+        public Card() {}
 
         //For personal use
         private Card(String fName, String email, String phone){
