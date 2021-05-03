@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/afg_bg">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/navBar4"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="#034687"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/backBtn"
         android:layout_width="wrap_content"
@@ -19,17 +30,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/navBar4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/navBar4" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/navBar4"
-        android:layout_width="match_parent"
-        android:layout_height="82dp"
-        android:background="#034687"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/pageLabel"

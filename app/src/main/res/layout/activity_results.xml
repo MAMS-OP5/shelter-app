@@ -33,31 +33,38 @@
             app:layout_constraintTop_toTopOf="@+id/navBar4" />
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/searchHeader"
-        android:layout_width="308dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="#034687"
-        android:gravity="center"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar3" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler1"
-        android:layout_width="360dp"
-        android:layout_height="550dp"
-        android:gravity="center"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchHeader"
-        app:layout_constraintVertical_bias="0.515" />
+        app:layout_constraintTop_toBottomOf="@+id/navBar3"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/searchHeader"
+            android:layout_width="500dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="#034687"
+            android:gravity="center"
+            android:text="@string/Results"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler1"
+            android:layout_width="500dp"
+            android:layout_height="700dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:gravity="center" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
