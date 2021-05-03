@@ -2,45 +2,52 @@ package com.example.afgapp;
 
 public class Card {
         // Variable to store data corresponding
-        // to name keyword in database
-        private String shelterNameCard;
+        // to fName keyword in database
+        private String fName;
 
         // Variable to store data corresponding
         // to email keyword in database
-        private String emailCard;
+        private String email;
 
         // Variable to store data corresponding
         // to phone keyword in database
-        private String phoneCard;
+        private String phone;
 
-        // Mandatory empty constructor
-        // for use of FirebaseUI
-        public void card() {}
+        // Mandatory empty constructor for use of FirebaseUI
+        public Card() {}
 
-        // Getter and setter method
-        public String getShelterName()
-        {
-            return shelterNameCard;
+        //For personal use
+        private Card(String fName, String email, String phone){
+            this.fName=fName;
+            this.email=email;
+            this.phone=phone;
         }
-        public void setShelterName(String shelterName)
+
+
+        // Getter and setter methods
+        public String getfName()
         {
-            this.shelterNameCard = shelterName;
+            return fName;
+        }
+        public void setfName(String shelterName)
+        {
+            this.fName = shelterName;
         }
         public String getEmail()
         {
-            return emailCard;
+            return email;
         }
         public void setEmail(String email)
         {
-            this.emailCard = email;
+            this.email = email;
         }
         public String getPhone()
         {
-            return phoneCard;
+            return phone;
         }
         public void setPhone(String phone)
         {
-            this.phoneCard = phone;
+            this.phone = phone;
         }
     }
 
