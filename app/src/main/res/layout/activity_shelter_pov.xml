@@ -29,177 +29,188 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/navBar" />
 
-    <TextView
-        android:id="@+id/shelterName"
-        android:layout_width="500dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="20dp"
-        android:width="350sp"
-        android:height="35sp"
-        android:background="#034687"
-        android:gravity="center"
-        android:text="Facility Name"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/shelterPovWhiteBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/shelterPovWhiteBox"
-        android:layout_width="500dp"
-        android:layout_height="500dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="569dp"
+        android:layout_height="846dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="30dp"
-        android:width="375sp"
-        android:height="350sp"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:textColor="#000000"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/shelterEmailDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Facility Email"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shelterName" />
-
-    <TextView
-        android:id="@+id/shelterPhoneDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Facility Phone Number"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/shelterPovWhiteBox"
-        app:layout_constraintStart_toStartOf="@+id/shelterPovWhiteBox"
-        app:layout_constraintTop_toBottomOf="@+id/shelterEmailDisplay" />
-
-    <TextView
-        android:id="@+id/shelterAddressDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Facility Address"
-        android:textSize="20sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shelterPhoneDisplay" />
-
-    <TextView
-        android:id="@+id/shelterResourcesDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Facility Resources (and/or Vacancies)"
-        android:textSize="20sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shelterAddressDisplay" />
-
-    <Button
-        android:id="@+id/shelterSideBrowse"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/Browse"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="#318ED4"
-        app:layout_constraintBottom_toBottomOf="@+id/shelterPovWhiteBox"
-        app:layout_constraintEnd_toEndOf="@+id/shelterPovWhiteBox"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/updateInfoButton" />
-
-    <Button
-        android:id="@+id/updateInfoButton"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/UpdateInfo"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="#318ED4"
-        app:layout_constraintBottom_toBottomOf="@+id/shelterPovWhiteBox"
-        app:layout_constraintEnd_toStartOf="@+id/shelterSideBrowse"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/shelterPovWhiteBox" />
-
-    <TextView
-        android:id="@+id/verifyReminder"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#ECE398"
-        android:gravity="center_horizontal"
-        android:text="@string/notVerified"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/navBar"
-        app:layout_constraintTop_toBottomOf="@+id/navBar" />
-
-    <Button
-        android:id="@+id/resendVerifyLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="@string/resendBtnStr"
-        android:textColor="#000000"
-        android:visibility="gone"
-        app:backgroundTint="#C1ECE398"
-        app:layout_constraintBottom_toBottomOf="@+id/verifyReminder"
-        app:layout_constraintEnd_toStartOf="@+id/verifyReminder"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/verifyReminder" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="535dp"
-        android:layout_height="168dp"
-        app:layout_constraintBottom_toTopOf="@+id/shelterName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navBar">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/changePhotoBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:backgroundTint="#034687"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/add_photo_foreground" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="535dp"
+            android:layout_height="168dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp">
 
-        <ImageView
-            android:id="@+id/shelterImage"
-            android:layout_width="wrap_content"
-            android:layout_height="125dp"
-            android:background="@drawable/ic_launcher_foreground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/changePhotoBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="@string/todo"
+                android:focusable="true"
+                app:backgroundTint="#034687"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/add_photo_foreground" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/shelterImage"
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:background="@drawable/ic_launcher_foreground"
+                android:contentDescription="@string/todo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/shelterName"
+            android:layout_width="500dp"
+            android:layout_height="70dp"
+            android:width="350sp"
+            android:height="35sp"
+            android:background="#034687"
+            android:gravity="center"
+            android:text="@string/facility_name"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/whiteBox"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            android:background="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/verifyReminder"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#ECE398"
+                android:gravity="center_horizontal"
+                android:text="@string/notVerified"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/shelterEmailDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/facility_email"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/shelterPhoneDisplay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/shelterPhoneDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="388dp"
+                android:text="@string/facility_phone_number"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/shelterAddressDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/facility_address"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shelterPhoneDisplay" />
+
+            <TextView
+                android:id="@+id/shelterResourcesDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/facility_resources_and_or_vacancies"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shelterAddressDisplay" />
+
+            <Button
+                android:id="@+id/shelterSideBrowse"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/Browse"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="#318ED4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/updateInfoButton"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/UpdateInfo"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="#318ED4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/resendVerifyLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/resendBtnStr"
+                android:textColor="#000000"
+                android:visibility="gone"
+                app:backgroundTint="#C1ECE398"
+                app:layout_constraintBottom_toBottomOf="@+id/verifyReminder"
+                app:layout_constraintEnd_toStartOf="@+id/verifyReminder"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/verifyReminder" />
+
+    </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
