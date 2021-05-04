@@ -40,6 +40,4 @@ public class ClaimFacility extends AppCompatActivity {
             }
         });
     }
-
-
 }
