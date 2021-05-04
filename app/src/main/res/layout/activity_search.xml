@@ -32,34 +32,51 @@
             app:layout_constraintTop_toTopOf="@+id/navBar4" />
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/searchLabel"
-        android:layout_width="500dp"
-        android:layout_height="70dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
         android:layout_marginTop="20dp"
-        android:background="#034687"
-        android:gravity="center"
-        android:text="@string/SearchFor"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar3" />
-
-    <Button
-        android:id="@+id/searchBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="390dp"
-        android:background="#034687"
-        android:text="Button"
-        app:backgroundTint="#034687"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/navBar3"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/searchLabel"
+            android:layout_width="500dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="#034687"
+            android:gravity="center"
+            android:text="@string/SearchFor"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="20dp"
+            android:spinnerMode="dropdown" />
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="500dp"
+            android:background="#034687"
+            android:text="@string/SearchButton"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:backgroundTint="#034687" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

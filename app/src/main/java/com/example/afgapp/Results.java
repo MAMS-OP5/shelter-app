@@ -27,13 +27,14 @@ public class Results extends AppCompatActivity {
 
     private RecyclerView resultsView;
     private FirestoreRecyclerAdapter adapter;
+    private FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+        fStore = FirebaseFirestore.getInstance();
         resultsView = findViewById(R.id.recyclerView);
 
         // Create a instance of the database and get its reference

@@ -14,52 +14,52 @@
         android:background="#034687"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
-    <TextView
-        android:id="@+id/IAm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Iam"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/lookForShelterButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar2"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <Button
-        android:id="@+id/lookForShelterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="350sp"
-        android:height="80sp"
-        android:clickable="true"
-        android:text="@string/LookingForShelter"
-        android:textSize="20sp"
-        app:backgroundTint="#034687"
-        app:layout_constraintBottom_toTopOf="@+id/haveFacilityButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IAm" />
-
-    <Button
-        android:id="@+id/haveFacilityButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="350sp"
-        android:height="80sp"
-        android:clickable="true"
-        android:text="@string/FacilityOwner"
-        android:textSize="20sp"
-        app:backgroundTint="#034687"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lookForShelterButton" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/IAm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/Iam"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/lookForShelterButton"
+            android:layout_width="350dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="5dp"
+            android:width="350sp"
+            android:height="80sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/LookingForShelter"
+            android:textSize="20sp"
+            app:backgroundTint="#034687" />
+
+        <Button
+            android:id="@+id/haveFacilityButton"
+            android:layout_width="350dp"
+            android:layout_height="80dp"
+            android:width="350sp"
+            android:height="80sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/FacilityOwner"
+            android:textSize="20sp"
+            app:backgroundTint="#034687" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
