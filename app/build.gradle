@@ -59,7 +59,7 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-auth:20.0.4'
 
-    //Firestore (More advanced than realtime database)
+    //Firestore (more advanced than realtime database)
     implementation 'com.google.firebase:firebase-firestore:22.1.2'
 
     //Multidex app
