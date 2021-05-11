@@ -32,6 +32,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/navBar" />
 
+    <Button
+        android:id="@+id/resetPassBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#034687"
+        android:text="@string/resetPassBtnStr"
+        app:backgroundTint="#034687"
+        app:layout_constraintBottom_toBottomOf="@+id/navBar"
+        app:layout_constraintEnd_toEndOf="@+id/navBar"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/shelterName"
         android:layout_width="500dp"
@@ -68,62 +81,71 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shelterName" />
 
-    <EditText
-        android:id="@+id/phoneNumber"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="450dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:autofillHints=""
-        android:hint="@string/PhoneNumStr"
-        android:inputType="phone"
+        android:layout_height="220dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/aboutText"
         app:layout_constraintEnd_toEndOf="@+id/aboutText"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toTopOf="@+id/aboutText" />
+        app:layout_constraintTop_toTopOf="@+id/aboutText">
 
-    <EditText
-        android:id="@+id/shelterEmail"
-        android:layout_width="450dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="3dp"
-        android:autofillHints=""
-        android:hint="@string/enterEmailHintStr"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/aboutText"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="450dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:autofillHints=""
+            android:hint="@string/PhoneNumStr"
+            android:inputType="phone"
+            app:layout_constraintBottom_toTopOf="@+id/shelterEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
-        android:id="@+id/location"
-        android:layout_width="450dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="3dp"
-        android:autofillHints=""
-        android:hint="@string/EnterLocationHintStr"
-        android:inputType="textPostalAddress"
-        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toBottomOf="@+id/shelterEmail" />
+        <EditText
+            android:id="@+id/shelterEmail"
+            android:layout_width="450dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:autofillHints=""
+            android:hint="@string/enterEmailHintStr"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/miscellaneous"
-        android:layout_width="450dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="3dp"
-        android:autofillHints=""
-        android:hint="@string/EnterExtraInfoHintStr"
-        android:inputType="textShortMessage|textLongMessage"
-        app:layout_constraintEnd_toEndOf="@+id/aboutText"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="@+id/aboutText"
-        app:layout_constraintTop_toBottomOf="@+id/location" />
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="450dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:autofillHints=""
+            android:hint="@string/EnterLocationHintStr"
+            android:inputType="textPostalAddress"
+            app:layout_constraintBottom_toTopOf="@+id/miscellaneous"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/miscellaneous"
+            android:layout_width="450dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="3dp"
+            android:autofillHints=""
+            android:hint="@string/EnterExtraInfoHintStr"
+            android:inputType="textShortMessage|textLongMessage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/resourcesText"
         android:layout_width="500dp"
-        android:layout_height="350dp"
+        android:layout_height="360dp"
         android:layout_marginBottom="100dp"
         android:background="@color/white"
         android:gravity="center_horizontal"
@@ -139,63 +161,59 @@
         app:layout_constraintTop_toBottomOf="@+id/aboutText"
         app:layout_constraintVertical_bias="0.189" />
 
-    <EditText
-        android:id="@+id/shelterResources"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="450dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:autofillHints=""
-        android:hint="@string/resources"
-        android:inputType="textShortMessage|textLongMessage"
-        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
-        app:layout_constraintStart_toStartOf="@+id/resourcesText"
-        app:layout_constraintTop_toTopOf="@+id/resourcesText" />
-
-    <Button
-        android:id="@+id/changePhotoBtn"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="15dp"
-        android:text="@string/changePhoto"
-        android:textAllCaps="true"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:backgroundTint="#034687"
-        app:layout_constraintBottom_toTopOf="@+id/claimThisFacility"
-        app:layout_constraintEnd_toEndOf="@+id/resourcesText"
-        app:layout_constraintStart_toStartOf="@+id/resourcesText"
-        app:layout_constraintTop_toBottomOf="@+id/shelterResources" />
-
-    <Button
-        android:id="@+id/submitUpdateBtn"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="25dp"
-        android:backgroundTint="#318ED4"
-        android:text="@string/submitUpdate"
-        android:textAllCaps="true"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:layout_height="300dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/resourcesText"
         app:layout_constraintEnd_toEndOf="@+id/resourcesText"
-        app:layout_constraintStart_toStartOf="@+id/resourcesText" />
+        app:layout_constraintStart_toStartOf="@+id/resourcesText"
+        app:layout_constraintTop_toBottomOf="@+id/aboutText">
 
-    <Button
-        android:id="@+id/resetPassBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#034687"
-        android:text="@string/resetPassBtnStr"
-        app:backgroundTint="#034687"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/navBar" />
+        <EditText
+            android:id="@+id/shelterResources"
+            android:layout_width="430dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:autofillHints=""
+            android:hint="@string/resources"
+            android:inputType="textShortMessage|textLongMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/changePhotoBtn"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:text="@string/changePhoto"
+            android:textAllCaps="true"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:backgroundTint="#034687"
+            app:layout_constraintBottom_toTopOf="@+id/submitUpdateBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shelterResources" />
+
+        <Button
+            android:id="@+id/submitUpdateBtn"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#318ED4"
+            android:text="@string/submitUpdate"
+            android:textAllCaps="true"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

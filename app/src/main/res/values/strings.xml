@@ -79,6 +79,11 @@
     <string name="addressHintStr">Address</string>
     <string name="miscHintStr">Address</string>
     <string name="resetPassBtnStr">Reset Password</string>
+    <string name="facility_name">Facility Name</string>
+    <string name="facility_email">Facility Email</string>
+    <string name="facility_phone_number">Facility Phone Number</string>
+    <string name="facility_address">Facility Address</string>
+    <string name="facility_resources_and_or_vacancies">Facility Resources (and/or Vacancies)</string>
     />
 
 </resources>

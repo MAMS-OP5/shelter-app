@@ -28,6 +28,7 @@ public class Results extends AppCompatActivity {
     private RecyclerView resultsView;
     private FirestoreRecyclerAdapter adapter;
     private FirebaseFirestore fStore;
+    Button backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class Results extends AppCompatActivity {
 
         fStore = FirebaseFirestore.getInstance();
         resultsView = findViewById(R.id.recyclerView);
+        backBtn = findViewById(R.id.backBtn);
 
         // Create a instance of the database and get its reference
         //  ref = FirebaseDatabase.getInstance().getReference();
@@ -66,6 +68,13 @@ public class Results extends AppCompatActivity {
         resultsView.setHasFixedSize(true);
         resultsView.setLayoutManager(new LinearLayoutManager(this));
         resultsView.setAdapter(adapter);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Search.class));
+            }
+        });
 
     }
 

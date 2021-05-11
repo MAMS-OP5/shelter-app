@@ -33,116 +33,116 @@
         app:layout_constraintTop_toTopOf="@+id/navBar" />
 
 
-    <TextView
-        android:id="@+id/searchHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:width="350sp"
-        android:height="50sp"
-        android:background="#034687"
-        android:gravity="center"
-        android:text="@string/ClaimFac"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/whiteBox"
-        android:layout_width="354dp"
-        android:layout_height="552dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="569dp"
+        android:layout_height="846dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchHeader">
+        app:layout_constraintTop_toBottomOf="@+id/navBar" >
 
         <TextView
-            android:id="@+id/instructions"
+            android:id="@+id/searchHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:paddingStart="10sp"
-            android:paddingLeft="10sp"
-            android:paddingRight="10sp"
-            android:text="@string/instructionsStr"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="28dp"
+            android:width="350sp"
+            android:height="50sp"
+            android:background="#034687"
+            android:gravity="center"
+            android:text="@string/ClaimFac"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/whiteBox"
+            android:layout_width="354dp"
+            android:layout_height="552dp"
+            android:layout_marginTop="20dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:id="@+id/whiteBoxLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/whiteBox">
+
+                <TextView
+                    android:id="@+id/instructions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="10sp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:text="@string/instructionsStr"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/provide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="10sp"
+                    android:paddingLeft="10sp"
+                    android:paddingEnd="0sp"
+                    android:paddingRight="0sp"
+                    android:text="@string/pleaseProvide"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextTextEmailAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/initialZipPrompt"
+                    android:importantForAutofill="no"
+                    android:inputType="textEmailAddress" />
+
+                <Button
+                    android:id="@+id/submitButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:text="@string/subButton"
+                    android:textSize="18sp"
+                    app:backgroundTint="#034687" />
+
+                <Button
+                    android:id="@+id/haveFacilityButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="164dp"
+                    android:width="300sp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:text="@string/haveFacilityButton"
+                    android:textSize="18sp"
+                    app:backgroundTint="#034687" />
+            </LinearLayout>
 
 
-        <TextView
-            android:id="@+id/provide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:paddingStart="10sp"
-            android:paddingLeft="10sp"
-            android:paddingEnd="0sp"
-            android:paddingRight="0sp"
-            android:text="@string/pleaseProvide"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instructions" />
-
-        <EditText
-            android:id="@+id/editTextTextEmailAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/initialZipPrompt"
-            android:importantForAutofill="no"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/provide"
-            app:layout_constraintVertical_bias="0.014" />
-
-        <Button
-            android:id="@+id/submitButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="@string/subButton"
-            android:textSize="18sp"
-            app:backgroundTint="#034687"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
-
-        <Button
-            android:id="@+id/haveFacilityButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="164dp"
-            android:width="300sp"
-            android:paddingLeft="10sp"
-            android:paddingRight="10sp"
-            android:text="@string/haveFacilityButton"
-            android:textSize="18sp"
-            app:backgroundTint="#034687"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/submitButton"
-            app:layout_constraintVertical_bias="0.0" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
