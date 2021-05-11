@@ -1,8 +1,16 @@
 package com.example.afgapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -10,9 +18,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Search extends AppCompatActivity {
+public class Search extends AppCompatActivity implements LocationListener {
 
     ArrayAdapter<String> arrayAdapter;
+    LocationManager locationManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +43,25 @@ public class Search extends AppCompatActivity {
             }
         });
 
+        //Get Current Location Button
+        Button getLoc = (Button) findViewById(R.id.getLocationBtn);
+        TextView addressText = findViewById(R.id.addressTxt);
+
+        //Runtime permissions
+        if(ContextCompat.checkSelfPermission(Search.this, Manifest.permission.ACCESS_FINE_LOCATION)
+            !=PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(Search.this, new String[]{
+                    Manifest.permission.ACCESS_FINE_LOCATION
+            },100);
+
+        }
+        getLoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getLocation();
+            }
+        });
+
         //Search Button
         Button search = (Button) findViewById(R.id.searchBtn);
 
@@ -46,8 +75,24 @@ public class Search extends AppCompatActivity {
 
     }
 
+    private void getLocation() {
+        try{
+            locationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,5,Search.this);
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
+
     }
 }
