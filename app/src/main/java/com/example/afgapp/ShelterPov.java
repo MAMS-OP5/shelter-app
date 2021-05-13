@@ -1,13 +1,14 @@
 package com.example.afgapp;
 
-import androidx.annotation.NonNull;
+    import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
+    import android.graphics.Bitmap;
+    import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -29,6 +30,10 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 public class ShelterPov extends AppCompatActivity {
 
@@ -40,6 +45,7 @@ public class ShelterPov extends AppCompatActivity {
     Button resendCode, updateInfo, browse;
     FloatingActionButton changeImg;
     ImageView shelterImg;
+    StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +54,20 @@ public class ShelterPov extends AppCompatActivity {
         phone = findViewById(R.id.shelterPhoneDisplay);
         name = findViewById(R.id.shelterName);
         email = findViewById(R.id.shelterEmailDisplay);
+        address = findViewById(R.id.shelterAddressDisplay);
+        resources = findViewById(R.id.shelterResourcesDisplay);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+        storageReference = FirebaseStorage.getInstance().getReference();
+
+        StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/shelter.jpg");
+        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(shelterImg);
+            }
+        });
 
         resendCode = findViewById(R.id.resendVerifyLink);
         verifyMsg = findViewById(R.id.verifyReminder);
@@ -92,6 +109,8 @@ public class ShelterPov extends AppCompatActivity {
                 phone.setText(documentSnapshot.getString("phone"));
                 name.setText(documentSnapshot.getString("fName"));
                 email.setText(documentSnapshot.getString("email"));
+                address.setText(documentSnapshot.getString("address line 1") + ", " + documentSnapshot.getString("city") + ", " + documentSnapshot.getString("state") + ", " + documentSnapshot.getString("zip code"));
+
             }
         });
         updateInfo.setOnClickListener(new View.OnClickListener() {
@@ -116,8 +135,6 @@ public class ShelterPov extends AppCompatActivity {
                 startActivityForResult(openGalleryIntent, 1000);
             }
         });
-
-
     }
 
     @Override
@@ -126,10 +143,34 @@ public class ShelterPov extends AppCompatActivity {
         if(requestCode==1000) {
             if(resultCode == Activity.RESULT_OK) {
                 Uri imageUri = data.getData();
-                shelterImg.setImageURI(imageUri);
 
+                //shelterImg.setImageURI(imageUri);
+
+                uploadImageToFirebase(imageUri);
             }
         }
+    }
+
+    private void uploadImageToFirebase(Uri imageUri) {
+        //upload image to firebase storage
+        StorageReference fileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/shelter.jpg");
+        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        final ImageView.ScaleType CENTER_INSIDE;
+                        Picasso.get().load(uri).placeholder(R.mipmap.add_photo).into(shelterImg);
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(ShelterPov.this, "Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void logout(View view) {
