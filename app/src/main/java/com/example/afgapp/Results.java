@@ -29,6 +29,8 @@ public class Results extends AppCompatActivity {
     private FirestoreRecyclerAdapter adapter;
     private FirebaseFirestore fStore;
     Button backBtn;
+    String searchKeyword;
+    Query query;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +44,19 @@ public class Results extends AppCompatActivity {
         // Create a instance of the database and get its reference
         //  ref = FirebaseDatabase.getInstance().getReference();
 
-        // Query
-        Query query = fStore.collection("users"); // add .orderBy?
+        //Get the city that the person entered in the search bar
+
+        Intent intent = getIntent();
+        if(intent.getStringArrayExtra("keyword")==null){
+            query = fStore.collection("users");
+        }
+        else {
+            searchKeyword = intent.getStringArrayExtra("keyword").toString();
+            // Query
+            query = fStore.collection("users")
+                    .whereEqualTo("city", searchKeyword.toString());
+            // add .orderBy?
+        }
 
         //Recycler Options
         FirestoreRecyclerOptions<Card> options = new FirestoreRecyclerOptions.Builder<Card>().setQuery(query, Card.class).build();
@@ -60,7 +73,7 @@ public class Results extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull CardViewHolder holder, int i, @NonNull Card card) {
                 holder.fNameCard.setText(card.getfName());
-                holder.emailCard.setText(card.getEmail());
+                holder.addressCard.setText(card.getAddress());
                 holder.phoneCard.setText(card.getPhone());
             }
         };
@@ -80,14 +93,14 @@ public class Results extends AppCompatActivity {
 
     private class CardViewHolder extends RecyclerView.ViewHolder {
         private TextView fNameCard;
-        private TextView emailCard;
+        private TextView addressCard;
         private TextView phoneCard;
 
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
 
             fNameCard = itemView.findViewById(R.id.fNameCard);
-            emailCard = itemView.findViewById(R.id.emailCard);
+            addressCard = itemView.findViewById(R.id.addressCard);
             phoneCard = itemView.findViewById(R.id.phoneCard);
         }
     }

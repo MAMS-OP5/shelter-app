@@ -33,7 +33,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
+ import com.squareup.picasso.Picasso;
 
 public class ShelterPov extends AppCompatActivity {
 
@@ -62,7 +62,7 @@ public class ShelterPov extends AppCompatActivity {
         storageReference = FirebaseStorage.getInstance().getReference();
 
         StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/shelter.jpg");
-        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+       profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
                 Picasso.get().load(uri).into(shelterImg);
@@ -144,7 +144,7 @@ public class ShelterPov extends AppCompatActivity {
             if(resultCode == Activity.RESULT_OK) {
                 Uri imageUri = data.getData();
 
-                //shelterImg.setImageURI(imageUri);
+                shelterImg.setImageURI(imageUri);
 
                 uploadImageToFirebase(imageUri);
             }
@@ -161,7 +161,7 @@ public class ShelterPov extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         final ImageView.ScaleType CENTER_INSIDE;
-                        Picasso.get().load(uri).placeholder(R.mipmap.add_photo).into(shelterImg);
+                       Picasso.get().load(uri).placeholder(R.mipmap.add_photo).into(shelterImg);
                     }
                 });
             }

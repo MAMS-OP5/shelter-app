@@ -7,7 +7,7 @@ public class Card {
 
         // Variable to store data corresponding
         // to email keyword in database
-        private String email;
+        private String AddressLine1;
 
         // Variable to store data corresponding
         // to phone keyword in database
@@ -19,7 +19,7 @@ public class Card {
         //For personal use
         private Card(String fName, String email, String phone){
             this.fName=fName;
-            this.email=email;
+            this.AddressLine1=AddressLine1;
             this.phone=phone;
         }
 
@@ -33,13 +33,13 @@ public class Card {
         {
             this.fName = shelterName;
         }
-        public String getEmail()
+        public String getAddress()
         {
-            return email;
+            return AddressLine1;
         }
-        public void setEmail(String email)
+        public void setAddress(String email)
         {
-            this.email = email;
+            this.AddressLine1 = AddressLine1;
         }
         public String getPhone()
         {

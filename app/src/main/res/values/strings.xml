@@ -53,7 +53,7 @@
 
     //xml search
     <string name="app_label">Shelter Name</string>
-    <string name="search_hint">Search by Location or Zip Code</string>
+    <string name="search_hint">Search by Location, Shelter Name, or Zip Code</string>
     <string name="search">Search</string>
     <string name="getLocation">Get Current Location</string>
 
@@ -84,6 +84,13 @@
     <string name="facility_phone_number">Facility Phone Number</string>
     <string name="facility_address">Facility Address</string>
     <string name="facility_resources_and_or_vacancies">Facility Resources (and/or Vacancies)</string>
+    <string name="addressLine1HintStr">Address</string>
+    <string name="enterCityHintStr">City</string>
+    <string name="enterStateHintStr">State</string>
+    <string name="enterZipHintStr">Zip Code</string>
+
+
+
     />
 
 </resources>

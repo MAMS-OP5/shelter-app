@@ -11,11 +11,15 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class Search extends AppCompatActivity implements LocationListener {
@@ -31,14 +35,30 @@ public class Search extends AppCompatActivity implements LocationListener {
 
         TextView lookShelter = findViewById(R.id.searchHeader);
 
+        EditText searchBox = findViewById(R.id.searchBox);
+        searchBox.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
 
         //Back Button
         Button back = (Button) findViewById(R.id.backBtn);
-
-        back.setOnClickListener(new View.OnClickListener(){
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Intent intent = new Intent(Search.this,MainActivity.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(Search.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -48,11 +68,11 @@ public class Search extends AppCompatActivity implements LocationListener {
         TextView addressText = findViewById(R.id.addressTxt);
 
         //Runtime permissions
-        if(ContextCompat.checkSelfPermission(Search.this, Manifest.permission.ACCESS_FINE_LOCATION)
-            !=PackageManager.PERMISSION_GRANTED){
+        if (ContextCompat.checkSelfPermission(Search.this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(Search.this, new String[]{
                     Manifest.permission.ACCESS_FINE_LOCATION
-            },100);
+            }, 100);
 
         }
         getLoc.setOnClickListener(new View.OnClickListener() {
@@ -65,10 +85,12 @@ public class Search extends AppCompatActivity implements LocationListener {
         //Search Button
         Button search = (Button) findViewById(R.id.searchBtn);
 
-        search.setOnClickListener(new View.OnClickListener(){
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Intent intent = new Intent(Search.this,Results.class);
+            public void onClick(View v) {
+                String searchKeyword = searchBox.getText().toString();
+                Intent intent = new Intent(Search.this, Results.class);
+                intent.putExtra("keyword", searchKeyword);
                 startActivity(intent);
             }
         });
@@ -76,9 +98,19 @@ public class Search extends AppCompatActivity implements LocationListener {
     }
 
     private void getLocation() {
-        try{
+        try {
             locationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,5,Search.this);
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5, Search.this);
 
         }catch(Exception e){
             e.printStackTrace();
