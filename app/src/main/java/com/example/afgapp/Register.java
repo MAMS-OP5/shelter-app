@@ -29,7 +29,7 @@ import java.util.Map;
 public class Register extends AppCompatActivity {
 
     public static final String TAG = "TAG";
-    EditText fName, fEmail, fPassword, fPhoneNum;
+    EditText fName, fEmail, fPassword, fPhoneNum, fAddress, fCity, fState, fZip;
     Button fRegisterBtn;
     TextView fLoginBtn;
     Button backBtn;
@@ -46,7 +46,11 @@ public class Register extends AppCompatActivity {
         fName = findViewById(R.id.enterFacName);
         fEmail = findViewById(R.id.enterEmail);
         fPassword = findViewById(R.id.enterPassword2);
-        fPhoneNum = findViewById((R.id.enterPhone));
+        fPhoneNum = findViewById(R.id.enterPhone);
+        fAddress = findViewById(R.id.enterAddressLine1);
+        fCity = findViewById(R.id.enterCity);
+        fState = findViewById(R.id.enterState);
+        fZip = findViewById(R.id.enterZip);
         fRegisterBtn = findViewById(R.id.registerBtn);
         fLoginBtn = findViewById(R.id.createText);
 
@@ -75,6 +79,10 @@ public class Register extends AppCompatActivity {
                 String password = fPassword.getText().toString().trim();
                 String phone = fPhoneNum.getText().toString().trim();
                 String facName = fName.getText().toString().trim();
+                String address1 = fAddress.getText().toString().trim();
+                String city = fCity.getText().toString().trim();
+                String state = fState.getText().toString().trim();
+                String zip = fZip.getText().toString().trim();
 
                 if(email.isEmpty()) {
                     fEmail.setError("Email is Required");
@@ -123,6 +131,10 @@ public class Register extends AppCompatActivity {
                             user.put("fName", facName);
                             user.put("email", email);
                             user.put("phone", phone);
+                            user.put("address1", address1);
+                            user.put("city", city);
+                            user.put("state", state);
+                            user.put("zipcode", zip);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
