@@ -109,7 +109,7 @@ public class ShelterPov extends AppCompatActivity {
                 phone.setText(documentSnapshot.getString("phone"));
                 name.setText(documentSnapshot.getString("fName"));
                 email.setText(documentSnapshot.getString("email"));
-                address.setText(documentSnapshot.getString("address line 1") + ", " + documentSnapshot.getString("city") + ", " + documentSnapshot.getString("state") + ", " + documentSnapshot.getString("zip code"));
+                address.setText(documentSnapshot.getString("address1") + ", " + documentSnapshot.getString("city") + ", " + documentSnapshot.getString("state") + ", " + documentSnapshot.getString("zipcode"));
 
             }
         });
@@ -161,7 +161,7 @@ public class ShelterPov extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         final ImageView.ScaleType CENTER_INSIDE;
-                       Picasso.get().load(uri).placeholder(R.mipmap.add_photo).into(shelterImg);
+                       Picasso.get().load(uri).placeholder(R.drawable.ic_launcher_foreground).into(shelterImg);
                     }
                 });
             }
