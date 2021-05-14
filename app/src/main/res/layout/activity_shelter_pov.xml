@@ -44,6 +44,18 @@
         app:layout_constraintTop_toBottomOf="@+id/navBar"
         tools:ignore="NotSibling" />
 
+    <Button
+        android:id="@+id/resendVerifyLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resendBtnStr"
+        android:textColor="#000000"
+        android:visibility="gone"
+        app:backgroundTint="#C1ECE398"
+        app:layout_constraintBottom_toBottomOf="@+id/verifyReminder"
+        app:layout_constraintEnd_toEndOf="@+id/verifyReminder"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="600dp"
@@ -197,19 +209,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/resendVerifyLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="@string/resendBtnStr"
-        android:textColor="#000000"
-        android:visibility="gone"
-        app:backgroundTint="#C1ECE398"
-        app:layout_constraintBottom_toBottomOf="@+id/verifyReminder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/verifyReminder"
-        app:layout_constraintTop_toBottomOf="@+id/navBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

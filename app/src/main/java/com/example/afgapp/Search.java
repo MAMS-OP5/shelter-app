@@ -61,11 +61,6 @@ public class Search extends AppCompatActivity implements LocationListener {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(fAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(getApplicationContext(), ShelterPov.class));
-                    finish();
-                }
-
                 Intent intent = new Intent(Search.this, MainActivity.class);
                 startActivity(intent);
             }

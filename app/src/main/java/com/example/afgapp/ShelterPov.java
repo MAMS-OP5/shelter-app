@@ -102,12 +102,12 @@ public class ShelterPov extends AppCompatActivity {
                         public void onSuccess(Void aVoid) {
                             resendCode.setVisibility(View.GONE);
                             verifyMsg.setVisibility(View.GONE);
-                            Toast.makeText(v.getContext(), "Verification link has been sent to " + email, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(v.getContext(), "Verification link has been sent to " + email.getText().toString(), Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Log.d(TAG, "onFailure: Email not sent" + e.getMessage());
+                            Log.d(TAG, "Email not sent" + e.getMessage());
                         }
                     });
                 }
@@ -117,8 +117,8 @@ public class ShelterPov extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-                phone.setText(documentSnapshot.getString("phone"));
                 name.setText(documentSnapshot.getString("fName"));
+                phone.setText(documentSnapshot.getString("phone"));
                 email.setText(documentSnapshot.getString("email"));
                 address1[0] = documentSnapshot.getString("address1");
                 city[0] = documentSnapshot.getString("city");
