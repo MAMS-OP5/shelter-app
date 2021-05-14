@@ -28,15 +28,12 @@ public class Search extends AppCompatActivity implements LocationListener {
 
     ArrayAdapter<String> arrayAdapter;
     LocationManager locationManager;
-    FirebaseAuth fAuth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
         TextView lookShelter = findViewById(R.id.searchHeader);
-        fAuth = FirebaseAuth.getInstance();
 
         EditText searchBox = findViewById(R.id.searchBox);
         searchBox.addTextChangedListener(new TextWatcher() {
