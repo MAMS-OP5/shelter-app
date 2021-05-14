@@ -135,6 +135,7 @@ public class Register extends AppCompatActivity {
                             user.put("city", city);
                             user.put("state", state);
                             user.put("zipcode", zip);
+                            user.put("desc", "");
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {

@@ -23,11 +23,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Search extends AppCompatActivity implements LocationListener {
 
     ArrayAdapter<String> arrayAdapter;
     LocationManager locationManager;
-
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class Search extends AppCompatActivity implements LocationListener {
         setContentView(R.layout.activity_search);
 
         TextView lookShelter = findViewById(R.id.searchHeader);
+        fAuth = FirebaseAuth.getInstance();
 
         EditText searchBox = findViewById(R.id.searchBox);
         searchBox.addTextChangedListener(new TextWatcher() {

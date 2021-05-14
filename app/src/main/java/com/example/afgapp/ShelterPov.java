@@ -38,7 +38,7 @@ import com.google.firebase.storage.UploadTask;
 public class ShelterPov extends AppCompatActivity {
 
     public static final String TAG = "TAG";
-    TextView name, email, phone, resources, address, verifyMsg;
+    TextView name, email, phone, desc, address, verifyMsg;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
@@ -55,7 +55,12 @@ public class ShelterPov extends AppCompatActivity {
         name = findViewById(R.id.shelterName);
         email = findViewById(R.id.shelterEmailDisplay);
         address = findViewById(R.id.shelterAddressDisplay);
-        resources = findViewById(R.id.shelterResourcesDisplay);
+        final String[] address1 = {""};
+        final String[] city = {""};
+        final String[] state = {""};
+        final String[] zip = {""};
+
+        desc = findViewById(R.id.shelterResourcesDisplay);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -81,6 +86,10 @@ public class ShelterPov extends AppCompatActivity {
         userId = fAuth.getCurrentUser().getUid();
         final FirebaseUser user = fAuth.getCurrentUser();
 
+        if(desc.getText().toString().isEmpty()) {
+            desc.setVisibility(View.GONE);
+        }
+
         if(!user.isEmailVerified()) {
             resendCode.setVisibility(View.VISIBLE);
             verifyMsg.setVisibility(View.VISIBLE);
@@ -91,12 +100,14 @@ public class ShelterPov extends AppCompatActivity {
                     user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(v.getContext(), "Verification link has been sent to " + email, Toast.LENGTH_SHORT).show();
+                            resendCode.setVisibility(View.GONE);
+                            verifyMsg.setVisibility(View.GONE);
+                            Toast.makeText(v.getContext(), "Verification link has been sent to " + email.getText().toString(), Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Log.d(TAG, "onFailure: Email not sent" + e.getMessage());
+                            Log.d(TAG, "Email not sent" + e.getMessage());
                         }
                     });
                 }
@@ -106,17 +117,30 @@ public class ShelterPov extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-                phone.setText(documentSnapshot.getString("phone"));
                 name.setText(documentSnapshot.getString("fName"));
+                phone.setText(documentSnapshot.getString("phone"));
                 email.setText(documentSnapshot.getString("email"));
-                address.setText(documentSnapshot.getString("address line 1") + ", " + documentSnapshot.getString("city") + ", " + documentSnapshot.getString("state") + ", " + documentSnapshot.getString("zip code"));
-
+                address1[0] = documentSnapshot.getString("address1");
+                city[0] = documentSnapshot.getString("city");
+                state[0] = documentSnapshot.getString("state");
+                zip[0] = documentSnapshot.getString("zipcode");
+                address.setText(address1[0] + ", " + city[0] + ", " + state[0] + ", " + zip[0]);
+                desc.setText(documentSnapshot.getString("desc"));
             }
         });
         updateInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), UpdateInfo.class));
+                Intent i = new Intent(getApplicationContext(), UpdateInfo.class);
+                i.putExtra("facName", name.getText().toString());
+                i.putExtra("email", email.getText().toString());
+                i.putExtra("phone", phone.getText().toString());
+                i.putExtra("address1", address1[0]);
+                i.putExtra("city", city[0]);
+                i.putExtra("state", state[0]);
+                i.putExtra("zip", zip[0]);
+                i.putExtra("desc", desc.getText().toString());
+                startActivity(i);
             }
         });
 
@@ -161,7 +185,7 @@ public class ShelterPov extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         final ImageView.ScaleType CENTER_INSIDE;
-                       Picasso.get().load(uri).placeholder(R.mipmap.add_photo).into(shelterImg);
+                       Picasso.get().load(uri).placeholder(R.drawable.ic_launcher_foreground).into(shelterImg);
                     }
                 });
             }

@@ -76,10 +76,8 @@
                 android:contentDescription="@string/todo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.837" />
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -107,46 +105,45 @@
                 android:id="@+id/shelterEmailDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
                 android:text="@string/facility_email"
                 android:textSize="20sp"
+                android:layout_gravity="center"
                 app:layout_constraintBottom_toTopOf="@+id/shelterPhoneDisplay"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.421" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
-                android:id="@+id/verifyReminder"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:background="#ECE398"
-                android:gravity="center_horizontal"
-                android:text="@string/notVerified"
-                android:textColor="#000000"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.682"
-                tools:ignore="NotSibling" />
+                    android:id="@+id/verifyReminder"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#ECE398"
+                    android:gravity="center_horizontal"
+                    android:text="@string/notVerified"
+                    android:textColor="#000000"
+                    android:textSize="30sp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="NotSibling" />
 
             <TextView
-                android:id="@+id/shelterPhoneDisplay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="384dp"
-                android:text="@string/facility_phone_number"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.53"
-                app:layout_constraintStart_toStartOf="parent" />
+                    android:id="@+id/shelterPhoneDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="388dp"
+                    android:text="@string/facility_phone_number"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.531"
+                    app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                     android:id="@+id/shelterAddressDisplay"
@@ -155,6 +152,7 @@
                     android:layout_marginTop="40dp"
                     android:text="@string/facility_address"
                     android:textSize="20sp"
+                    android:visibility="gone"
                     android:layout_gravity="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -168,6 +166,7 @@
                     android:layout_marginTop="40dp"
                     android:text="@string/facility_resources_and_or_vacancies"
                     android:textSize="20sp"
+                    android:visibility="gone"
                     android:layout_gravity="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -209,6 +208,7 @@
                     android:layout_marginBottom="10dp"
                     android:text="@string/resendBtnStr"
                     android:textColor="#000000"
+                    android:visibility="gone"
                     android:layout_gravity="center"
                     app:backgroundTint="#C1ECE398"
                     app:layout_constraintBottom_toBottomOf="@+id/verifyReminder"
