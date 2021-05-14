@@ -25,7 +25,15 @@ public class Card {
     // to city keyword in database
     private String city;
 
+    // Variable to store data corresponding
+    // to state keyword in database
     private String state;
+
+    // Variables to store data corresponding
+    // to description keywords in database
+    private String desc;
+
+    private String fDesc;
 
 
     // Mandatory empty constructor for use of FirebaseUI
@@ -33,7 +41,7 @@ public class Card {
     }
 
     //For personal use
-    private Card(String fName, String address1, String phone, String email, String zipcode, String city) {
+    private Card(String fName, String address1, String phone, String email, String zipcode, String city, String state, String desc, String fDesc) {
         this.fName = fName;
         this.address1 = address1;
         this.phone = phone;
@@ -41,6 +49,8 @@ public class Card {
         this.zipcode = zipcode;
         this.city = city;
         this.state = state;
+        this.desc=desc;
+        this.fDesc=fDesc;
     }
 
 
@@ -99,6 +109,22 @@ public class Card {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getfDesc() {
+        return fDesc;
+    }
+
+    public void setfDesc(String fDesc) {
+        this.fDesc = fDesc;
     }
 }
 

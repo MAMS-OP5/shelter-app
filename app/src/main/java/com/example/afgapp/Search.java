@@ -31,10 +31,15 @@ public class Search extends AppCompatActivity implements LocationListener {
     LocationManager locationManager;
     FirebaseAuth fAuth;
 
+    private static final String TAG = "SearchBoxChange";
+    public static String searchCity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+
 
         TextView lookShelter = findViewById(R.id.searchHeader);
         fAuth = FirebaseAuth.getInstance();
@@ -53,6 +58,8 @@ public class Search extends AppCompatActivity implements LocationListener {
 
             @Override
             public void afterTextChanged(Editable s) {
+                Log.d(TAG, "Searchbox has changed to: "+s.toString());
+                searchCity=s.toString();
             }
         });
 
@@ -92,14 +99,11 @@ public class Search extends AppCompatActivity implements LocationListener {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String searchKeywordStr = searchBox.getText().toString();
-                String[] searchKeyword = searchKeywordStr.split("");
 
-                System.out.println(searchKeyword);
+               // Log.d(TAG, searchCity);
 
                 Intent intent = new Intent(Search.this, Results.class);
-                Bundle bundle = new Bundle();
-                bundle.putStringArray("keyword", searchKeyword);
+                intent.putExtra("cityName",searchCity);
                 startActivity(intent);
 
 

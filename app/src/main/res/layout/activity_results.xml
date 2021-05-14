@@ -59,6 +59,16 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/resultsInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="500dp"
@@ -66,6 +76,7 @@
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
             android:gravity="center" />
+
     </LinearLayout>
 
 

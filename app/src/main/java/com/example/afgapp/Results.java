@@ -26,8 +26,9 @@ public class Results extends AppCompatActivity {
     private FirestoreRecyclerAdapter adapter;
     private FirebaseFirestore fStore;
     Button backBtn;
-    String [] searchKeyword;
+    String searchCity;
     Query query;
+    TextView resultsInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,24 +38,29 @@ public class Results extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         resultsView = findViewById(R.id.recyclerView);
         backBtn = findViewById(R.id.backBtn);
-
-        // Create a instance of the database and get its reference
-        //  ref = FirebaseDatabase.getInstance().getReference();
+        resultsInfo=findViewById(R.id.resultsInfo);
 
         //Get the city that the person entered in the search bar
 
-        Intent intent = getIntent();
-        if(intent.getStringArrayExtra("keyword")!=null){
-            searchKeyword = intent.getStringArrayExtra("keyword");
-            System.out.println(searchKeyword);
+        Intent intent=getIntent();
+        searchCity = intent.getExtras().getString("cityName");
 
-            // Query
-            query = fStore.collection("users")
-                    .whereEqualTo("city", searchKeyword.toString());
-            // add .orderBy?
+        //Update ResultsInfo to say what is being displayed
+        if(searchCity==null){
+            resultsInfo.setText("Displaying all facilities");
         }
-        else {
+        else{
+            resultsInfo.setText("Displaying facilities in "+searchCity+".");
+        }
+
+        //Set query to display the correct results for the matching city.
+        if(searchCity==null){
             query = fStore.collection("users");
+        }else{
+            query = fStore.collection("users")
+                    .whereEqualTo(
+                            "city",
+                            searchCity);
         }
 
         //Recycler Options
@@ -75,6 +81,7 @@ public class Results extends AppCompatActivity {
                 holder.address1Card.setText(card.getAddress1());
                 holder.emailCard.setText(card.getEmail());
                 holder.phoneCard.setText(card.getPhone());
+
             }
         };
 
@@ -82,6 +89,7 @@ public class Results extends AppCompatActivity {
         resultsView.setLayoutManager(new LinearLayoutManager(this));
         resultsView.setAdapter(adapter);
 
+        //Back button
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,6 +113,20 @@ public class Results extends AppCompatActivity {
             address1Card = itemView.findViewById(R.id.address1Card);
             emailCard = itemView.findViewById(R.id.emailCard);
             phoneCard = itemView.findViewById(R.id.phoneCard);
+
+            //if a card is clicked
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                Intent intent = new Intent(Results.this, CardPage.class);
+                intent.putExtra("name",fNameCard.getText());
+                intent.putExtra("email",emailCard.getText());
+                intent.putExtra("phone",phoneCard.getText());
+                intent.putExtra("address",address1Card.getText());
+
+                startActivity(intent);
+                }
+            });
         }
     }
 
