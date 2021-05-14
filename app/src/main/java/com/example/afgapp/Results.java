@@ -12,9 +12,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -29,7 +26,7 @@ public class Results extends AppCompatActivity {
     private FirestoreRecyclerAdapter adapter;
     private FirebaseFirestore fStore;
     Button backBtn;
-    String searchKeyword;
+    String [] searchKeyword;
     Query query;
 
     @Override
@@ -47,15 +44,17 @@ public class Results extends AppCompatActivity {
         //Get the city that the person entered in the search bar
 
         Intent intent = getIntent();
-        if(intent.getStringArrayExtra("keyword")==null){
-            query = fStore.collection("users");
-        }
-        else {
-            searchKeyword = intent.getStringArrayExtra("keyword").toString();
+        if(intent.getStringArrayExtra("keyword")!=null){
+            searchKeyword = intent.getStringArrayExtra("keyword");
+            System.out.println(searchKeyword);
+
             // Query
             query = fStore.collection("users")
                     .whereEqualTo("city", searchKeyword.toString());
             // add .orderBy?
+        }
+        else {
+            query = fStore.collection("users");
         }
 
         //Recycler Options
@@ -73,7 +72,8 @@ public class Results extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull CardViewHolder holder, int i, @NonNull Card card) {
                 holder.fNameCard.setText(card.getfName());
-                holder.addressCard.setText(card.getAddress());
+                holder.address1Card.setText(card.getAddress1());
+                holder.emailCard.setText(card.getEmail());
                 holder.phoneCard.setText(card.getPhone());
             }
         };
@@ -93,14 +93,17 @@ public class Results extends AppCompatActivity {
 
     private class CardViewHolder extends RecyclerView.ViewHolder {
         private TextView fNameCard;
-        private TextView addressCard;
+        private TextView address1Card;
+        private TextView emailCard;
         private TextView phoneCard;
+
 
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
 
             fNameCard = itemView.findViewById(R.id.fNameCard);
-            addressCard = itemView.findViewById(R.id.addressCard);
+            address1Card = itemView.findViewById(R.id.address1Card);
+            emailCard = itemView.findViewById(R.id.emailCard);
             phoneCard = itemView.findViewById(R.id.phoneCard);
         }
     }

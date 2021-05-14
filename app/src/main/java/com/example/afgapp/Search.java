@@ -15,6 +15,7 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -88,10 +89,17 @@ public class Search extends AppCompatActivity implements LocationListener {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String searchKeyword = searchBox.getText().toString();
+                String searchKeywordStr = searchBox.getText().toString();
+                String[] searchKeyword = searchKeywordStr.split("");
+
+                System.out.println(searchKeyword);
+
                 Intent intent = new Intent(Search.this, Results.class);
-                intent.putExtra("keyword", searchKeyword);
+                Bundle bundle = new Bundle();
+                bundle.putStringArray("keyword", searchKeyword);
                 startActivity(intent);
+
+
             }
         });
 
