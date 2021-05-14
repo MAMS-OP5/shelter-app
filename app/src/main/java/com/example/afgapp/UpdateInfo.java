@@ -100,11 +100,11 @@ public class UpdateInfo extends AppCompatActivity {
                         edited.put("email", email);
                         edited.put("fName", fName.getText().toString());
                         edited.put("phone", fPhoneNum.getText().toString());
-                        edited.put("fDesc", fDesc.getText().toString());
                         edited.put("address1", fAddress.getText().toString());
                         edited.put("city", fCity.getText().toString());
                         edited.put("state", fState.getText().toString());
                         edited.put("zipcode", fZip.getText().toString());
+                        edited.put("desc", fDesc.getText().toString());
                         docRef.update(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {

@@ -86,6 +86,10 @@ public class ShelterPov extends AppCompatActivity {
         userId = fAuth.getCurrentUser().getUid();
         final FirebaseUser user = fAuth.getCurrentUser();
 
+        if(desc.getText().toString().isEmpty()) {
+            desc.setVisibility(View.GONE);
+        }
+
         if(!user.isEmailVerified()) {
             resendCode.setVisibility(View.VISIBLE);
             verifyMsg.setVisibility(View.VISIBLE);
@@ -96,6 +100,8 @@ public class ShelterPov extends AppCompatActivity {
                     user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
+                            resendCode.setVisibility(View.GONE);
+                            verifyMsg.setVisibility(View.GONE);
                             Toast.makeText(v.getContext(), "Verification link has been sent to " + email, Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
