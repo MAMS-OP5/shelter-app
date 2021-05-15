@@ -1,5 +1,10 @@
 package com.example.afgapp;
 
+import android.net.Uri;
+
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 public class Card {
     // Variable to store data corresponding
     // to fName keyword in database
@@ -35,13 +40,17 @@ public class Card {
 
     private String fDesc;
 
+    private Uri imgUri;
+
+    StorageReference storageReference;
+
 
     // Mandatory empty constructor for use of FirebaseUI
     public Card() {
     }
 
     //For personal use
-    private Card(String fName, String address1, String phone, String email, String zipcode, String city, String state, String desc, String fDesc) {
+    private Card(String fName, String address1, String phone, String email, String zipcode, String city, String state, String desc, String fDesc, Uri imgUri) {
         this.fName = fName;
         this.address1 = address1;
         this.phone = phone;
@@ -51,6 +60,7 @@ public class Card {
         this.state = state;
         this.desc=desc;
         this.fDesc=fDesc;
+        this.imgUri=imgUri;
     }
 
 
@@ -126,6 +136,16 @@ public class Card {
     public void setfDesc(String fDesc) {
         this.fDesc = fDesc;
     }
+
+    public Uri getImgUri(){
+        return imgUri;
+    }
+    public void setImgUri(Uri imgUri){
+        this.imgUri=imgUri;
+         /*storageReference = FirebaseStorage.getInstance().getReference();
+        this.imgUri = storageReference.child("users/shelter.jpg").getPath();*/
+    }
+
 }
 
 

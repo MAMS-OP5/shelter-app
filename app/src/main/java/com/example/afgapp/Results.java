@@ -3,21 +3,36 @@ package com.example.afgapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.drm.DrmManagerClient;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Results extends AppCompatActivity {
@@ -29,6 +44,13 @@ public class Results extends AppCompatActivity {
     String searchCity;
     Query query;
     TextView resultsInfo;
+    StorageReference storageReference;
+    UploadTask.TaskSnapshot taskSnapshot;
+
+    String generatedFilePath;
+
+    private Context ct;
+    ImageView imageCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +62,32 @@ public class Results extends AppCompatActivity {
         backBtn = findViewById(R.id.backBtn);
         resultsInfo=findViewById(R.id.resultsInfo);
 
-        //Get the city that the person entered in the search bar
 
+       /*   private void uploadImageToFirebase(Uri imageUri) {
+        //upload image to firebase storage
+        StorageReference fileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/shelter.jpg");
+        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        final ImageView.ScaleType CENTER_INSIDE;
+                       Picasso.get().load(uri).placeholder(R.drawable.ic_launcher_foreground).into(shelterImg);
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(ShelterPov.this, "Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }*/
+
+
+
+        //Get the city that the person entered in the search bar
         Intent intent=getIntent();
         searchCity = intent.getExtras().getString("cityName");
 
@@ -81,7 +127,9 @@ public class Results extends AppCompatActivity {
                 holder.address1Card.setText(card.getAddress1());
                 holder.emailCard.setText(card.getEmail());
                 holder.phoneCard.setText(card.getPhone());
+                holder.descCard.setText(card.getDesc());
 
+              //  holder.imageCard.setImageURI(card.getImgUri());
             }
         };
 
@@ -104,6 +152,8 @@ public class Results extends AppCompatActivity {
         private TextView address1Card;
         private TextView emailCard;
         private TextView phoneCard;
+        private TextView descCard;
+        private ImageView imageCard;
 
 
         public CardViewHolder(@NonNull View itemView) {
@@ -113,6 +163,8 @@ public class Results extends AppCompatActivity {
             address1Card = itemView.findViewById(R.id.address1Card);
             emailCard = itemView.findViewById(R.id.emailCard);
             phoneCard = itemView.findViewById(R.id.phoneCard);
+            descCard=itemView.findViewById(R.id.descCard);
+            imageCard=findViewById(R.id.imageCard);
 
             //if a card is clicked
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -123,6 +175,8 @@ public class Results extends AppCompatActivity {
                 intent.putExtra("email",emailCard.getText());
                 intent.putExtra("phone",phoneCard.getText());
                 intent.putExtra("address",address1Card.getText());
+                intent.putExtra("desc",descCard.getText());
+               // intent.putExtra("image", (Parcelable) imageCard.getDrawable());
 
                 startActivity(intent);
                 }

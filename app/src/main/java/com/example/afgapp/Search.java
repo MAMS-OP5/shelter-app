@@ -6,14 +6,21 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.os.Looper;
+import android.provider.Settings;
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
@@ -22,8 +29,23 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.IOException;
+import java.text.BreakIterator;
+import java.util.List;
+import java.util.Locale;
 
 public class Search extends AppCompatActivity implements LocationListener {
 
@@ -33,13 +55,14 @@ public class Search extends AppCompatActivity implements LocationListener {
 
     private static final String TAG = "SearchBoxChange";
     public static String searchCity;
+    FusedLocationProviderClient fusedLocationProviderClient;
+
+    private Boolean flag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
-
 
         TextView lookShelter = findViewById(R.id.searchHeader);
         fAuth = FirebaseAuth.getInstance();
@@ -58,8 +81,8 @@ public class Search extends AppCompatActivity implements LocationListener {
 
             @Override
             public void afterTextChanged(Editable s) {
-                Log.d(TAG, "Searchbox has changed to: "+s.toString());
-                searchCity=s.toString();
+                Log.d(TAG, "Searchbox has changed to: " + s.toString());
+                searchCity = s.toString();
             }
         });
 
@@ -74,24 +97,6 @@ public class Search extends AppCompatActivity implements LocationListener {
             }
         });
 
-        //Get Current Location Button
-        Button getLoc = (Button) findViewById(R.id.getLocationBtn);
-        TextView addressText = findViewById(R.id.addressTxt);
-
-        //Runtime permissions
-        if (ContextCompat.checkSelfPermission(Search.this, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(Search.this, new String[]{
-                    Manifest.permission.ACCESS_FINE_LOCATION
-            }, 100);
-
-        }
-        getLoc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getLocation();
-            }
-        });
 
         //Search Button
         Button search = (Button) findViewById(R.id.searchBtn);
@@ -100,42 +105,33 @@ public class Search extends AppCompatActivity implements LocationListener {
             @Override
             public void onClick(View v) {
 
-               // Log.d(TAG, searchCity);
+                // Log.d(TAG, searchCity);
 
                 Intent intent = new Intent(Search.this, Results.class);
-                intent.putExtra("cityName",searchCity);
+                intent.putExtra("cityName", searchCity);
                 startActivity(intent);
 
 
             }
         });
 
-    }
 
-    private void getLocation() {
-        try {
-            locationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-                return;
+        //Get Current Location Button
+
+
+        Button btnGetLocation = (Button) findViewById(R.id.getLocationBtn);
+        TextView editLocation = findViewById(R.id.addressTxt);
+
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(Search.this);
+
+        btnGetLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(Search.this, "Location Button Clicked", Toast.LENGTH_LONG).show();
             }
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5, Search.this);
 
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
+        });
     }
 
     @Override

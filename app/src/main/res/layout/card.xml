@@ -8,7 +8,8 @@
     android:layout_marginHorizontal="10dp"
     android:layout_marginTop="20dp"
     android:background="#FFFFFF"
-    android:gravity="center">
+    android:gravity="center"
+    android:visibility="visible">
 
     <TextView
         android:id="@+id/fNameCard"
@@ -72,6 +73,41 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address1Card" />
+
+    <ImageView
+        android:id="@+id/imageCard"
+        android:layout_width="144dp"
+        android:layout_height="138dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/address1Card"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fNameCard"
+        app:layout_constraintVertical_bias="0.066"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/descCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="328dp"
+        android:layout_marginLeft="328dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginRight="114dp"
+        android:layout_marginBottom="11dp"
+        android:text="resources"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneCard" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

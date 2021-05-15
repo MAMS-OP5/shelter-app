@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AFGApp">
         <activity android:name=".CardPage"></activity>
-        <activity android:name=".ClaimFacility" />
         <activity android:name=".Results" />
         <activity android:name=".Search" />
         <activity android:name=".ShelterPov" />
@@ -26,7 +25,6 @@
         </activity>
         <activity android:name=".Login" />
         <activity android:name=".UpdateInfo" />
-        <activity android:name=".viewShelterInfo" />
         <activity android:name=".Register">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

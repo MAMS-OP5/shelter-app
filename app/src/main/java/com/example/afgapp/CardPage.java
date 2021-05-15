@@ -35,12 +35,14 @@ public class CardPage extends AppCompatActivity {
         String email = getIntent().getStringExtra("email");
         String phone = getIntent().getStringExtra("phone");
        String address = getIntent().getStringExtra("address");
+       String desc = getIntent().getStringExtra("desc");
 
 
        setName(shelterName);
        setEmail(email);
        setPhone(phone);
        setAddress(address);
+       setResources(desc);
     }
 
     private void setName(String name){
@@ -58,5 +60,9 @@ public class CardPage extends AppCompatActivity {
     private void setAddress(String address){
         TextView addressDisplay = findViewById(R.id.shelterAddressDisplay);
         addressDisplay.setText(address);
+    }
+    private void setResources(String desc){
+        TextView resourcesDisplay = findViewById(R.id.shelterResourcesDisplay);
+        resourcesDisplay.setText("Facility Resources: "+desc);
     }
 }
