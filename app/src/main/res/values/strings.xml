@@ -1,31 +1,38 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">AFG App</string>
-    <string name="Iam">I am…</string>
 
-    //page 1 Home
+    //page 1 Main
+    <string name="Iam">I am…</string>
     <string name="LookingForShelter">Looking for a shelter</string>
     <string name="FacilityOwner">A facility or resource owner</string>
 
     //page 2 search
+    <string name="app_label">Shelter Name</string>
+    <string name="search_hint">Search by Location, Shelter Name, or Zip Code</string>
+    <string name="search">Search</string>
+    <string name="getLocation">Get Current Location</string>
     <string name="SearchFor">Search For Facilities</string>
-    <string name="SearchTitle">enter a location or zip code</string>
-    <string name="SearchLabel">Search Bar</string>
     <string name="SearchButton">Search</string>
 
     //page 3 results
     <string name="Results">Search Results</string>
 
-    //page 5 View Shelter Info
-    <string name="shelterNameStr" tools:ignore="StringEscaping">John Smith Shelter</string>
-    <string name="claimThisFacilityStr">Claim this facility</string>
+    //page 4 register
+    <string name="registerLabelStr">Create Account</string>
+    <string name="facilityNameHintStr">Facility Name</string>
+    <string name="enterEmailHintStr">Facility Email</string>
+    <string name="EnterPasswordHintStr">Password</string>
+    <string name="PhoneNumStr">Facility Phone Number</string>
+    <string name="CreateAccButtonStr">Create</string>
+    <string name="loginBtn">Or Login Here</string>
+    <string name="addressLine1HintStr">Address</string>
+    <string name="enterCityHintStr">City</string>
+    <string name="enterStateHintStr">State</string>
+    <string name="enterZipHintStr">Zip Code</string>
 
-    //page 6 Claim Facility
-    <string name="ClaimFac">Claim Facility</string>
-    <string name="instructionsStr">If you are the owner of a facility and would like to update the facility information, provide the ZIP code of your facility below and sign up for an account to confirm facility ownership.</string>
-    <string name="pleaseProvide">Please provide your facility ZIP code:</string>
-    <string name="initialZipPrompt">Enter ZIP code</string>
-    <string name="subButton">Submit</string>
-    <string name="haveFacilityButton">I already claimed my facility (Login)</string>
+
+    //page 5 login
+
 
     //page 8 Shelter POV
     <string name="UpdateInfo">Update Info</string>
@@ -51,26 +58,15 @@
     <string name="EnterLocationHintStr">Facility Location</string>
     <string name="EnterExtraInfoHintStr">Additional Information</string>
 
-    //xml search
-    <string name="app_label">Shelter Name</string>
-    <string name="search_hint">Search by Location, Shelter Name, or Zip Code</string>
-    <string name="search">Search</string>
-    <string name="getLocation">Get Current Location</string>
+
 
     //results
     <string name="email">email</string>
 
     //Register and Login
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="registerLabelStr">Create Account</string>
-    <string name="facilityNameHintStr">Facility Name</string>
-    <string name="enterEmailHintStr">Facility Email</string>
-    <string name="EnterPasswordHintStr">Password</string>
-    <string name="PhoneNumStr">Facility Phone Number</string>
-    <string name="CreateAccButtonStr"> Create</string>
     <string name="LoginLabelStr"> Login </string>
     <string name="loginButtonStr">Login</string>
-    <string name="loginBtn">Or Login Here</string>
+
     <string name="backBtnStr">Back</string>
     <string name="logoutBtnStr">Logout</string>
     <string name="newHereToReg">Or Sign Up</string>
@@ -84,10 +80,7 @@
     <string name="facility_phone_number">Facility Phone Number</string>
     <string name="facility_address">Facility Address</string>
     <string name="facility_resources_and_or_vacancies">Facility Resources (and/or Vacancies)</string>
-    <string name="addressLine1HintStr">Address</string>
-    <string name="enterCityHintStr">City</string>
-    <string name="enterStateHintStr">State</string>
-    <string name="enterZipHintStr">Zip Code</string>
+
     <string name="editFacNameHintStr">Edit Name</string>
 
 
