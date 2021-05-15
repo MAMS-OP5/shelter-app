@@ -70,7 +70,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
-            android:layout_width="500dp"
+            android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toTopOf="@+id/shelterName"
@@ -97,7 +97,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_launcher_foreground"
                 android:contentDescription="@string/todo"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
