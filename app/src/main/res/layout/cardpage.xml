@@ -94,60 +94,53 @@
             android:background="#FFFFFF">
 
             <TextView
-                android:id="@+id/shelterResourcesDisplay"
+                android:id="@+id/shelterEmailDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="230dp"
-                android:text="@string/facility_resources_and_or_vacancies"
+                android:layout_marginTop="25dp"
+                android:text="@string/facility_email"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.608"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/shelterEmailDisplay" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/shelterPhoneDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="25dp"
                 android:text="@string/facility_phone_number"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/shelterEmailDisplay"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/shelterAddressDisplay" />
+                app:layout_constraintTop_toBottomOf="@+id/shelterEmailDisplay" />
 
             <TextView
                 android:id="@+id/shelterAddressDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="25dp"
                 android:text="@string/facility_address"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/shelterPhoneDisplay"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/shelterPhoneDisplay" />
 
             <TextView
-                android:id="@+id/shelterEmailDisplay"
+                android:id="@+id/shelterResourcesDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:text="@string/facility_email"
+                android:layout_marginTop="25dp"
+                android:text="@string/facility_resources_and_or_vacancies"
+                android:gravity="center"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/shelterResourcesDisplay"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shelterAddressDisplay" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
