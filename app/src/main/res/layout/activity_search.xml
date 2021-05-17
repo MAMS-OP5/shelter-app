@@ -76,6 +76,10 @@
 
             android:drawableStart="@android:drawable/ic_menu_search"
 
+            android:imeOptions="actionGo"
+            android:imeActionId="666"
+            android:imeActionLabel="Some Label"
+
             android:hint="@string/search_hint"
             android:inputType="text"
             android:drawableLeft="@android:drawable/ic_menu_search"></EditText>

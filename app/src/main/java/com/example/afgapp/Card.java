@@ -156,7 +156,7 @@ public class Card {
         this.userID=userID;
     }
 
-   /* private URI getURI(String userID){
+   /*private URI getURI(String userID){
         storageReference = FirebaseStorage.getInstance().getReference();
         StorageReference ref = storageReference.child("users/"+userID+"shelter.jpg");
 

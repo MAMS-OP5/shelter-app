@@ -23,8 +23,10 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,7 +56,7 @@ public class Search extends AppCompatActivity implements LocationListener {
     FirebaseAuth fAuth;
 
     private static final String TAG = "SearchBoxChange";
-    public static String searchCity;
+    public static String searchCity=null;
     FusedLocationProviderClient fusedLocationProviderClient;
 
     private Boolean flag = false;
@@ -98,22 +100,22 @@ public class Search extends AppCompatActivity implements LocationListener {
         });
 
 
-        //Search Button
-        Button search = (Button) findViewById(R.id.searchBtn);
+                    //Search Button
+                    Button search = (Button) findViewById(R.id.searchBtn);
 
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                    search.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
 
-                //capitalization(searchCity);
-
-                Intent intent = new Intent(Search.this, Results.class);
-                intent.putExtra("cityName", searchCity);
-                startActivity(intent);
+                            Intent intent = new Intent(Search.this, Results.class);
+                            intent.putExtra("cityName", searchCity);
+                            startActivity(intent);
 
 
-            }
-        });
+                        }
+                    });
+
+
 
 
         //Get Current Location Button
@@ -139,13 +141,4 @@ public class Search extends AppCompatActivity implements LocationListener {
 
     }
 
-    public String capitalization(String searchCity){
-        String first = searchCity.substring(0,1);
-        searchCity.toLowerCase();
-        first.toUpperCase();
-        searchCity=searchCity.substring(1);
-        searchCity=first+searchCity;
-
-        return searchCity;
-    }
 }

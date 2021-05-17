@@ -60,6 +60,12 @@ public class Results extends AppCompatActivity {
         Intent intent=getIntent();
         searchCity = intent.getExtras().getString("cityName");
 
+        if(searchCity!=null) {
+            System.out.println(searchCity);
+            searchCity=Capitalization(searchCity);
+        }
+        System.out.println(searchCity);
+
         //Update ResultsInfo to say what is being displayed
         if(searchCity==null){
             resultsInfo.setText("Displaying all facilities");
@@ -171,6 +177,11 @@ public class Results extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+    public String Capitalization(String searchCity){
+       String cap=searchCity.substring(0,1).toUpperCase()+searchCity.substring(1);
+        return cap;
     }
 }
 
