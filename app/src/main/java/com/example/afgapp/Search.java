@@ -2,31 +2,16 @@ package com.example.afgapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
-import android.Manifest;
-import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.os.Looper;
-import android.provider.Settings;
 import android.text.Editable;
-import android.text.Html;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,20 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-
-import java.io.IOException;
-import java.text.BreakIterator;
-import java.util.List;
-import java.util.Locale;
 
 public class Search extends AppCompatActivity implements LocationListener {
 
@@ -57,9 +30,11 @@ public class Search extends AppCompatActivity implements LocationListener {
 
     private static final String TAG = "SearchBoxChange";
     public static String searchCity=null;
+    public static String showAll=null;
     FusedLocationProviderClient fusedLocationProviderClient;
 
     private Boolean flag = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,19 +93,19 @@ public class Search extends AppCompatActivity implements LocationListener {
 
 
 
-        //Get Current Location Button
+        //Get all facilities
 
 
-        Button btnGetLocation = (Button) findViewById(R.id.getLocationBtn);
-        TextView editLocation = findViewById(R.id.addressTxt);
+        Button seeAllBtn = (Button) findViewById(R.id.seeAllBtn);
 
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(Search.this);
 
-        btnGetLocation.setOnClickListener(new View.OnClickListener() {
+        seeAllBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(Search.this, Results.class);
+                intent.putExtra("cityName", showAll);
+                startActivity(intent);
 
-                Toast.makeText(Search.this, "Location Button Clicked", Toast.LENGTH_LONG).show();
             }
 
         });

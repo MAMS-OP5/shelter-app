@@ -179,9 +179,15 @@ public class Results extends AppCompatActivity {
         adapter.stopListening();
     }
 
-    public String Capitalization(String searchCity){
-       String cap=searchCity.substring(0,1).toUpperCase()+searchCity.substring(1);
-        return cap;
+    public static String Capitalization(String searchCity){
+        String words[]=searchCity.split("\\s");
+        String capitalizeWord="";
+        for(String w:words){
+            String first=w.substring(0,1);
+            String afterfirst=w.substring(1);
+            capitalizeWord+=first.toUpperCase()+afterfirst+" ";
+        }
+        return capitalizeWord.trim();
     }
 }
 
