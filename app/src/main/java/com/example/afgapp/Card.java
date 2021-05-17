@@ -1,9 +1,18 @@
 package com.example.afgapp;
 
 import android.net.Uri;
+import android.widget.ImageView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
+
+import java.net.URI;
 
 public class Card {
     // Variable to store data corresponding
@@ -40,9 +49,11 @@ public class Card {
 
     private String fDesc;
 
-    private Uri imgUri;
+    private String userID;
 
-    StorageReference storageReference;
+    private ImageView image;
+
+    private StorageReference storageReference;
 
 
     // Mandatory empty constructor for use of FirebaseUI
@@ -50,7 +61,7 @@ public class Card {
     }
 
     //For personal use
-    private Card(String fName, String address1, String phone, String email, String zipcode, String city, String state, String desc, String fDesc, Uri imgUri) {
+    private Card(String fName, String address1, String phone, String email, String zipcode, String city, String state, String desc, String fDesc, String userID, ImageView image) {
         this.fName = fName;
         this.address1 = address1;
         this.phone = phone;
@@ -60,7 +71,8 @@ public class Card {
         this.state = state;
         this.desc=desc;
         this.fDesc=fDesc;
-        this.imgUri=imgUri;
+        this.userID=userID;
+        this.image=image;
     }
 
 
@@ -137,14 +149,36 @@ public class Card {
         this.fDesc = fDesc;
     }
 
-    public Uri getImgUri(){
-        return imgUri;
+    public String getuserID(){
+        return userID;
     }
-    public void setImgUri(Uri imgUri){
-        this.imgUri=imgUri;
-         /*storageReference = FirebaseStorage.getInstance().getReference();
-        this.imgUri = storageReference.child("users/shelter.jpg").getPath();*/
+    public void setuserID(String userID){
+        this.userID=userID;
     }
+
+   /* private URI getURI(String userID){
+        storageReference = FirebaseStorage.getInstance().getReference();
+        StorageReference ref = storageReference.child("users/"+userID+"shelter.jpg");
+
+        
+
+
+       UploadTask uploadTask = storageReference.putBytes(mUploadBytes);
+        uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Toast.makeText(getActivity(), "Filed", Toast.LENGTH_SHORT).show();
+
+                Uri firebaseUri = taskSnapshot.getDownloadUrl();
+
+                Log.d(TAG, "onSuccess: firebase download url: " + firebaseUri.toString());
+
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+
+
+        Task<Uri> uri = ref.getDownloadUrl();
+     return uri;
+    }*/
 
 }
 

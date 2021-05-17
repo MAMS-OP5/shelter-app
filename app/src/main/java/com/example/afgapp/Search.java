@@ -105,7 +105,7 @@ public class Search extends AppCompatActivity implements LocationListener {
             @Override
             public void onClick(View v) {
 
-                // Log.d(TAG, searchCity);
+                //capitalization(searchCity);
 
                 Intent intent = new Intent(Search.this, Results.class);
                 intent.putExtra("cityName", searchCity);
@@ -137,5 +137,15 @@ public class Search extends AppCompatActivity implements LocationListener {
     @Override
     public void onLocationChanged(@NonNull Location location) {
 
+    }
+
+    public String capitalization(String searchCity){
+        String first = searchCity.substring(0,1);
+        searchCity.toLowerCase();
+        first.toUpperCase();
+        searchCity=searchCity.substring(1);
+        searchCity=first+searchCity;
+
+        return searchCity;
     }
 }
