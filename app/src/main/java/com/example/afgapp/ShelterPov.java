@@ -2,23 +2,19 @@ package com.example.afgapp;
 
     import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
+//import android.app.Activity;
 import android.content.Intent;
-    import android.graphics.Bitmap;
     import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
+//import android.provider.MediaStore;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,7 +28,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
+//import com.google.firebase.storage.UploadTask;
  import com.squareup.picasso.Picasso;
 
 public class ShelterPov extends AppCompatActivity {
@@ -45,7 +41,7 @@ public class ShelterPov extends AppCompatActivity {
     Button resendCode, updateInfo, browse;
     FloatingActionButton changeImg;
     ImageView shelterImg;
-    StorageReference storageReference;
+    //StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +59,8 @@ public class ShelterPov extends AppCompatActivity {
         desc = findViewById(R.id.shelterResourcesDisplay);
 
         fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
+
+        /*fStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
 
         StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/shelter.jpg");
@@ -72,7 +69,7 @@ public class ShelterPov extends AppCompatActivity {
             public void onSuccess(Uri uri) {
                 Picasso.get().load(uri).into(shelterImg);
             }
-        });
+        });*/
 
         resendCode = findViewById(R.id.resendVerifyLink);
         verifyMsg = findViewById(R.id.verifyReminder);
@@ -151,17 +148,19 @@ public class ShelterPov extends AppCompatActivity {
             }
         });
 
-        changeImg.setOnClickListener(new View.OnClickListener() {
+
+        /*changeImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Open Gallery
                 Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(openGalleryIntent, 1000);
             }
-        });
+        });*/
     }
 
-    @Override
+
+    /*@Override
     protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==1000) {
@@ -195,7 +194,7 @@ public class ShelterPov extends AppCompatActivity {
                 Toast.makeText(ShelterPov.this, "Failed", Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
