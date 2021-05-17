@@ -51,10 +51,6 @@ public class Card {
 
     private String userID;
 
-    private ImageView image;
-
-    private StorageReference storageReference;
-
 
     // Mandatory empty constructor for use of FirebaseUI
     public Card() {
@@ -72,7 +68,6 @@ public class Card {
         this.desc=desc;
         this.fDesc=fDesc;
         this.userID=userID;
-        this.image=image;
     }
 
 

@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -47,7 +49,6 @@ public class CardPage extends AppCompatActivity {
         String phone = getIntent().getStringExtra("phone");
         String address = getIntent().getStringExtra("address");
         String desc = getIntent().getStringExtra("desc");
-        String userID = getIntent().getStringExtra("userID");
 
 
         setName(shelterName);
@@ -55,7 +56,6 @@ public class CardPage extends AppCompatActivity {
         setPhone(phone);
         setAddress(address);
         setResources(desc);
-        //setImage(userID);
 
     }
 
@@ -66,36 +66,40 @@ public class CardPage extends AppCompatActivity {
 
     private void setEmail(String email) {
         TextView emailDisplay = findViewById(R.id.shelterEmailDisplay);
-        emailDisplay.setText(email);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            emailDisplay.setText(Html.fromHtml("<b>Email:</b><br><p>"+email+"</p>", Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            emailDisplay.setText(Html.fromHtml("<b>Email:</b><br><p>"+email+"</p>"));
+        }
     }
 
     private void setPhone(String phone) {
         TextView phoneDisplay = findViewById(R.id.shelterPhoneDisplay);
-        phoneDisplay.setText(phone);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            phoneDisplay.setText(Html.fromHtml("<b>Phone:</b><br><p>"+phone+"</p>", Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            phoneDisplay.setText(Html.fromHtml("<b>Phone::</b><br><p>"+phone+"</p>"));
+        }
     }
 
     private void setAddress(String address) {
         TextView addressDisplay = findViewById(R.id.shelterAddressDisplay);
-        addressDisplay.setText(address);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            addressDisplay.setText(Html.fromHtml("<b>Address:</b><br><p>"+address+"</p><br>", Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            addressDisplay.setText(Html.fromHtml("<b>Address:</b><br><p>"+address+"</p><br>"));
+        }
     }
 
     private void setResources(String desc) {
         TextView resourcesDisplay = findViewById(R.id.shelterResourcesDisplay);
-        resourcesDisplay.setText("Facility Resources: " + desc);
-    }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            resourcesDisplay.setText(Html.fromHtml("<b>Facility Resources:</b><br><p>"+desc+"</p>", Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            resourcesDisplay.setText(Html.fromHtml("<b>Facility Resources:</b><br><p>"+desc+"</p>"));
+        }
 
-   /* private void setImage(String userID){
-        storageReference = FirebaseStorage.getInstance().getReference();
-        ImageView image = findViewById(R.id.imageCard);
-        StorageReference ref = storageReference.child("users/"+userID);
-        //gs://afg-op5.appspot.com/users/9aRWm4zOjyPOlGRXey83bdGs8jH2/shelter.jpg
-        Task<Uri> uri = ref.getDownloadUrl();
-        uri.addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-String url=uri.toString();
-                Picasso.get().load(url).into(image);
-            }*/
+    }
 
 }
 

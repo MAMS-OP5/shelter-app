@@ -104,7 +104,6 @@ public class Results extends AppCompatActivity {
                 holder.phoneCard.setText(card.getPhone());
                 holder.descCard.setText(card.getDesc());
                 holder.userIDCard.setText(card.getuserID());
-               // holder.imageCard.setImageURI(card.getURI());
 
             }
         };
