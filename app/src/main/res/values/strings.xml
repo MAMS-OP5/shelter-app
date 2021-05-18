@@ -13,9 +13,10 @@
     <string name="seeAllStr">See All Facilities</string>
     <string name="SearchFor">Search For Facilities</string>
     <string name="SearchButton">Search</string>
+    <string name="resultsInfo">Results Information</string>
 
     //page 3 results
-    <string name="Results">Search Results</string>
+    <string name="searchResultsStr">Search Results</string>
 
     //page 4 register
     <string name="registerLabelStr">Create Account</string>
@@ -29,9 +30,6 @@
     <string name="enterCityHintStr">City</string>
     <string name="enterStateHintStr">State</string>
     <string name="enterZipHintStr">Zip Code</string>
-
-
-    //page 5 login
 
 
     //page 8 Shelter POV
@@ -59,10 +57,6 @@
     <string name="EnterExtraInfoHintStr">Additional Information</string>
 
 
-
-    //results
-    <string name="email">email</string>
-
     //Register and Login
     <string name="LoginLabelStr"> Login </string>
     <string name="loginButtonStr">Login</string>
@@ -82,7 +76,6 @@
     <string name="facility_resources_and_or_vacancies">Facility Resources (and/or Vacancies)</string>
 
     <string name="editFacNameHintStr">Edit Name</string>
-
 
     />
 

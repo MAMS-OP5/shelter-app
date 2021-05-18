@@ -49,15 +49,13 @@ public class Card {
 
     private String fDesc;
 
-    private String userID;
-
 
     // Mandatory empty constructor for use of FirebaseUI
     public Card() {
     }
 
     //For personal use
-    private Card(String fName, String address1, String phone, String email, String zipcode, String city, String state, String desc, String fDesc, String userID, ImageView image) {
+    private Card(String fName, String address1, String phone, String email, String zipcode, String city, String state, String desc, String fDesc) {
         this.fName = fName;
         this.address1 = address1;
         this.phone = phone;
@@ -67,7 +65,6 @@ public class Card {
         this.state = state;
         this.desc=desc;
         this.fDesc=fDesc;
-        this.userID=userID;
     }
 
 
@@ -144,13 +141,7 @@ public class Card {
         this.fDesc = fDesc;
     }
 
-    public String getuserID(){
-        return userID;
-    }
-    public void setuserID(String userID){
-        this.userID=userID;
-    }
-
+    //Testing code for inputting uploaded images
    /*private URI getURI(String userID){
         storageReference = FirebaseStorage.getInstance().getReference();
         StorageReference ref = storageReference.child("users/"+userID+"shelter.jpg");

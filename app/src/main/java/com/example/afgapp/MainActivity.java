@@ -10,11 +10,12 @@ import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
+    @Override //onCreate method
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //button one, looking for a shelter, sends to search
         Button lookShelter = (Button) findViewById(R.id.lookForShelterButton);
 
         lookShelter.setOnClickListener(new OnClickListener(){
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //button two, shelter owner, sends to register
         Button haveShelter = (Button) findViewById(R.id.haveFacilityButton);
 
         haveShelter.setOnClickListener(new OnClickListener(){

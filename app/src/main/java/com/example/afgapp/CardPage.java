@@ -25,7 +25,7 @@ public class CardPage extends AppCompatActivity {
     Button backBtn;
     StorageReference storageReference;
 
-    @Override
+    @Override //onCreate method
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cardpage);
@@ -43,6 +43,7 @@ public class CardPage extends AppCompatActivity {
 
     }
 
+    //get data from teh recycler view card that was clicked and set it
     private void getIncomingIntent() {
         String shelterName = getIntent().getStringExtra("name");
         String email = getIntent().getStringExtra("email");
@@ -59,11 +60,13 @@ public class CardPage extends AppCompatActivity {
 
     }
 
+    //set name field from string from intent
     private void setName(String name) {
         TextView shelterName = findViewById(R.id.shelterName);
         shelterName.setText(name);
     }
 
+    //set email field from string from intent
     private void setEmail(String email) {
         TextView emailDisplay = findViewById(R.id.shelterEmailDisplay);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -73,6 +76,7 @@ public class CardPage extends AppCompatActivity {
         }
     }
 
+    //set phone field from string from intent
     private void setPhone(String phone) {
         TextView phoneDisplay = findViewById(R.id.shelterPhoneDisplay);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -82,6 +86,7 @@ public class CardPage extends AppCompatActivity {
         }
     }
 
+    //set address field from string from intent
     private void setAddress(String address) {
         TextView addressDisplay = findViewById(R.id.shelterAddressDisplay);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -91,6 +96,7 @@ public class CardPage extends AppCompatActivity {
         }
     }
 
+    //set resources field from string from intent
     private void setResources(String desc) {
         TextView resourcesDisplay = findViewById(R.id.shelterResourcesDisplay);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

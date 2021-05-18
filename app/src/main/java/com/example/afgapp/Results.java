@@ -45,7 +45,7 @@ public class Results extends AppCompatActivity {
     Query query;
     TextView resultsInfo;
 
-    @Override
+    @Override //onCreate
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
@@ -60,6 +60,7 @@ public class Results extends AppCompatActivity {
         Intent intent=getIntent();
         searchCity = intent.getExtras().getString("cityName");
 
+        //If no city was entered, display all shelters
         if(searchCity!=null) {
             System.out.println(searchCity);
             searchCity=Capitalization(searchCity);
@@ -103,7 +104,7 @@ public class Results extends AppCompatActivity {
                 holder.emailCard.setText(card.getEmail());
                 holder.phoneCard.setText(card.getPhone());
                 holder.descCard.setText(card.getDesc());
-                holder.userIDCard.setText(card.getuserID());
+
 
             }
         };
@@ -122,14 +123,13 @@ public class Results extends AppCompatActivity {
 
     }
 
+//Standard methods for recyclerview, defining each card textview
     private class CardViewHolder extends RecyclerView.ViewHolder {
         private TextView fNameCard;
         private TextView address1Card;
         private TextView emailCard;
         private TextView phoneCard;
         private TextView descCard;
-        private TextView userIDCard;
-        private ImageView imageCard;
 
 
         public CardViewHolder(@NonNull View itemView) {
@@ -140,10 +140,9 @@ public class Results extends AppCompatActivity {
             emailCard = itemView.findViewById(R.id.emailCard);
             phoneCard = itemView.findViewById(R.id.phoneCard);
             descCard=itemView.findViewById(R.id.descCard);
-            userIDCard=itemView.findViewById(R.id.userIDCard);
-            imageCard=itemView.findViewById(R.id.imageCard);
 
-            //if a card is clicked
+
+            //if a card is clicked, send info to next pafe so it can be displayed on shelter page
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -153,7 +152,6 @@ public class Results extends AppCompatActivity {
                 intent.putExtra("phone",phoneCard.getText());
                 intent.putExtra("address",address1Card.getText());
                 intent.putExtra("desc",descCard.getText());
-                intent.putExtra("userID",userIDCard.getText());
 
                 startActivity(intent);
                 }
@@ -178,6 +176,8 @@ public class Results extends AppCompatActivity {
         adapter.stopListening();
     }
 
+    //Change capitalization of inputted string in searchBox to capitalize first letter to match firebase
+    // Param@searchCity, the inputted string
     public static String Capitalization(String searchCity){
         String words[]=searchCity.split("\\s");
         String capitalizeWord="";

@@ -22,7 +22,7 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Search extends AppCompatActivity implements LocationListener {
+public class Search extends AppCompatActivity {
 
     ArrayAdapter<String> arrayAdapter;
     LocationManager locationManager;
@@ -36,7 +36,7 @@ public class Search extends AppCompatActivity implements LocationListener {
     private Boolean flag = false;
 
 
-    @Override
+    @Override //onCreate method
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
@@ -44,6 +44,7 @@ public class Search extends AppCompatActivity implements LocationListener {
         TextView lookShelter = findViewById(R.id.searchHeader);
         fAuth = FirebaseAuth.getInstance();
 
+        //editable search bar, sends info to log
         EditText searchBox = findViewById(R.id.searchBox);
         searchBox.addTextChangedListener(new TextWatcher() {
             @Override
@@ -75,7 +76,7 @@ public class Search extends AppCompatActivity implements LocationListener {
         });
 
 
-                    //Search Button
+                    //Search Button, on click send the inputted string from search bar to results so it can make correct query
                     Button search = (Button) findViewById(R.id.searchBtn);
 
                     search.setOnClickListener(new View.OnClickListener() {
@@ -94,10 +95,7 @@ public class Search extends AppCompatActivity implements LocationListener {
 
 
         //Get all facilities
-
-
         Button seeAllBtn = (Button) findViewById(R.id.seeAllBtn);
-
 
         seeAllBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,9 +109,5 @@ public class Search extends AppCompatActivity implements LocationListener {
         });
     }
 
-    @Override
-    public void onLocationChanged(@NonNull Location location) {
-
-    }
 
 }

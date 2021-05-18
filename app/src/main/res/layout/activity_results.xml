@@ -54,7 +54,7 @@
             android:layout_gravity="center"
             android:background="#034687"
             android:gravity="center"
-            android:text="@string/Results"
+            android:text="@string/searchResultsStr"
             android:textColor="#FFFFFF"
             android:textSize="36sp"
             android:textStyle="bold" />
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="TextView"
+            android:text="@string/resultsInfo"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
