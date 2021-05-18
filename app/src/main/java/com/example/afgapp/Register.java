@@ -1,3 +1,9 @@
+/**
+ * @author Group OP5 (Shreya Gouda, Cara Murphy, Sahej Singh)
+ * Adds the ability to register a new account using email, password, phone number, and address and
+ * store that information in firestore and firebase authentication.
+ * Adds functionality to activity_register.xml
+ */
 package com.example.afgapp;
 
 import android.content.Intent;
@@ -27,7 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Register extends AppCompatActivity {
-
+    //Variable declarations
     public static final String TAG = "TAG";
     EditText fName, fEmail, fPassword, fPhoneNum, fAddress, fCity, fState, fZip;
     Button fRegisterBtn;
@@ -42,7 +48,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        //Variable instantiations
         fName = findViewById(R.id.enterFacName);
         fEmail = findViewById(R.id.enterEmail);
         fPassword = findViewById(R.id.enterPassword2);
@@ -60,11 +66,12 @@ public class Register extends AppCompatActivity {
 
         backBtn = findViewById(R.id.backBtn);
 
+        //If user already logged in, just send to shelter pov
         if(fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), ShelterPov.class));
             finish();
         }
-
+        //Sends user back to main activity
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +79,8 @@ public class Register extends AppCompatActivity {
             }
         });
 
+        //Sends entered data to firestore and firebase authentication for storing for future
+        //login and searching usage.
         fRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -160,6 +169,7 @@ public class Register extends AppCompatActivity {
              }
         });
 
+        //Sends user to login if textView is clicked
         fLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,3 +1,4 @@
+
 package com.example.afgapp;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         //button one, looking for a shelter, sends to search
         Button lookShelter = (Button) findViewById(R.id.lookForShelterButton);
 
+        //Allows users to browse shelters by sending to search activity.
         lookShelter.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View v){
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         //button two, shelter owner, sends to register
         Button haveShelter = (Button) findViewById(R.id.haveFacilityButton);
 
+        //Allows users to register or login by sending them to the register class.
         haveShelter.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View v){

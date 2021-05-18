@@ -1,3 +1,7 @@
+/**
+ * @author Group OP5 (Shreya Gouda, Cara Murphy, Sahej Singh)
+ * Main dashboard for shelter to view their info after logging in.
+ */
 package com.example.afgapp;
 
     import androidx.annotation.NonNull;
@@ -32,7 +36,7 @@ import com.google.firebase.storage.StorageReference;
  import com.squareup.picasso.Picasso;
 
 public class ShelterPov extends AppCompatActivity {
-
+    //variable declarations
     public static final String TAG = "TAG";
     TextView name, email, phone, desc, address, verifyMsg;
     FirebaseAuth fAuth;
@@ -47,6 +51,8 @@ public class ShelterPov extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelter_pov);
+
+        //variable instantiations
         phone = findViewById(R.id.shelterPhoneDisplay);
         name = findViewById(R.id.shelterName);
         email = findViewById(R.id.shelterEmailDisplay);
@@ -59,9 +65,10 @@ public class ShelterPov extends AppCompatActivity {
         desc = findViewById(R.id.shelterResourcesDisplay);
 
         fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
-        /*fStore = FirebaseFirestore.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
+        //Loads requested image into image view from firebase storage for corresponding user
+        /*storageReference = FirebaseStorage.getInstance().getReference();
 
         StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/shelter.jpg");
        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -83,10 +90,11 @@ public class ShelterPov extends AppCompatActivity {
         userId = fAuth.getCurrentUser().getUid();
         final FirebaseUser user = fAuth.getCurrentUser();
 
+        //Makes shelter description visible if filled in
         if(desc.getText().toString().isEmpty()) {
             desc.setVisibility(View.GONE);
         }
-
+        //Adds a verification reminder
         if(!user.isEmailVerified()) {
             resendCode.setVisibility(View.VISIBLE);
             verifyMsg.setVisibility(View.VISIBLE);
@@ -110,6 +118,7 @@ public class ShelterPov extends AppCompatActivity {
                 }
             });
         }
+        //Sets textViews from firestore data from registration and updated info
         DocumentReference documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
@@ -125,6 +134,8 @@ public class ShelterPov extends AppCompatActivity {
                 desc.setText(documentSnapshot.getString("desc"));
             }
         });
+
+        //Sends data to update info activity
         updateInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,6 +152,7 @@ public class ShelterPov extends AppCompatActivity {
             }
         });
 
+        //Allows user to browse without going back to main
         browse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,6 +161,7 @@ public class ShelterPov extends AppCompatActivity {
         });
 
 
+        //Allows user to change profile picture, to be implemented in future
         /*changeImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,6 +209,7 @@ public class ShelterPov extends AppCompatActivity {
         });
     }*/
 
+    //Allows user to logout of account
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(), MainActivity.class));

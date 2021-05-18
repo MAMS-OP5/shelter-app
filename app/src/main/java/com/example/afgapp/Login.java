@@ -1,3 +1,8 @@
+/**
+ * @author Group OP5 (Shreya Gouda, Cara Murphy, Sahej Singh)
+ * Adds the ability to login to a previously registered account by using an email and password
+ * Adds functionality to activity_login.xml
+ */
 package com.example.afgapp;
 
 import android.content.DialogInterface;
@@ -22,6 +27,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
+    //Variable Declarations
     EditText fEmail, fPassword;
     Button fLoginButton;
     TextView fCreateButton, forgotPassword;
@@ -34,6 +40,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Variable Instantiations
         fEmail = findViewById(R.id.enterEmail);
         fPassword = findViewById(R.id.enterPassword);
         fLoginButton = findViewById((R.id.loginBtn));
@@ -43,6 +50,9 @@ public class Login extends AppCompatActivity {
         forgotPassword = findViewById(R.id.forgotPass);
         backBtn = findViewById(R.id.backBtn);
 
+
+         //Allows user to login using firebase authentication after entering email and password
+         //appropriate into fields
         fLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +77,8 @@ public class Login extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 //Authenticate User
-
+                //Sends user to activity_shelter_pov.xml to be able to view and edit
+                //their shelter info
                 fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -83,13 +94,14 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        //Sends user back to Registration page (last page).
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), Register.class));
             }
         });
-
+        //Sends user to registration activity after clicking on corresponding textView.
         fCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +109,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        //Enables user to reset their password if they forgot it through email.
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

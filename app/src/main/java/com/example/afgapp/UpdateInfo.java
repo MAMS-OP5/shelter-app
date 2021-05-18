@@ -1,3 +1,7 @@
+/**
+ * @author Group OP5 (Shreya Gouda, Cara Murphy, Sahej Singh)
+ * Main dashboard for shelter to update their info after logging in.
+ */
 package com.example.afgapp;
 
 import android.content.DialogInterface;
@@ -26,6 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UpdateInfo extends AppCompatActivity {
+    //variable declarations
     private static final String TAG = "TAG";
     Button backBtn, resetPassLocal, updateInfoBtn;
     EditText fName, fEmail, fDesc, fPhoneNum, fAddress, fCity, fState, fZip;
@@ -37,6 +42,8 @@ public class UpdateInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_info);
+
+        //Receives data from shelter pov
         Intent data = getIntent();
         String facName = data.getStringExtra("facName");
         String email = data.getStringExtra("email");
@@ -47,8 +54,9 @@ public class UpdateInfo extends AppCompatActivity {
         String zip = data.getStringExtra("zip");
         String desc = data.getStringExtra("desc");
 
-        Log.d(TAG, "onCreate: " + facName + " " + email + " " + phone + " " + address1 + " " + city + " " + state + " " + zip + " " + desc);
+        //Log.d(TAG, "onCreate: " + facName + " " + email + " " + phone + " " + address1 + " " + city + " " + state + " " + zip + " " + desc);
 
+        //variable instantiations
         backBtn = findViewById(R.id.backBtn);
         resetPassLocal = findViewById(R.id.resetPassBtn);
         updateInfoBtn = findViewById(R.id.updateInfoBtn);
@@ -76,6 +84,7 @@ public class UpdateInfo extends AppCompatActivity {
         fState.setText(state);
         fZip.setText(zip);
 
+        //Allows user to return to shelter pov without clicking update info btn
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +92,7 @@ public class UpdateInfo extends AppCompatActivity {
             }
         });
 
+        //Updates entered info in editTexts in firestore
         updateInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,7 +138,7 @@ public class UpdateInfo extends AppCompatActivity {
                 });
             }
         });
-
+        //Allows user to reset password in app
         resetPassLocal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
