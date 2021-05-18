@@ -84,8 +84,8 @@ public class ShelterPov extends AppCompatActivity {
         updateInfo = findViewById(R.id.updateInfoButton);
         browse = findViewById(R.id.shelterSideBrowse);
 
-        shelterImg = findViewById(R.id.shelterImage);
-        changeImg = findViewById(R.id.changePhotoBtn);
+        //shelterImg = findViewById(R.id.shelterImage);
+        //changeImg = findViewById(R.id.changePhotoBtn);
 
         userId = fAuth.getCurrentUser().getUid();
         final FirebaseUser user = fAuth.getCurrentUser();

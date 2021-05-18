@@ -82,7 +82,7 @@ public class CardPage extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             phoneDisplay.setText(Html.fromHtml("<b>Phone:</b><br><p>"+phone+"</p>", Html.FROM_HTML_MODE_COMPACT));
         } else {
-            phoneDisplay.setText(Html.fromHtml("<b>Phone::</b><br><p>"+phone+"</p>"));
+            phoneDisplay.setText(Html.fromHtml("<b>Phone:</b><br><p>"+phone+"</p>"));
         }
     }
 
